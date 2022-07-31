@@ -1,4 +1,4 @@
-package io.github.seanlanepgh.knockselementalmagic.entity.client.model.elemental;
+package io.github.seanlanepgh.knockselementalmagic.client.model.elemental;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlizzEntity;

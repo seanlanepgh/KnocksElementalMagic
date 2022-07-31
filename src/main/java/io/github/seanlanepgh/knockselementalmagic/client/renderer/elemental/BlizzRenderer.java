@@ -1,15 +1,14 @@
-package io.github.seanlanepgh.knockselementalmagic.entity.client.renderer.elemental;
+package io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
-import io.github.seanlanepgh.knockselementalmagic.entity.client.model.elemental.BlizzModel;
+import io.github.seanlanepgh.knockselementalmagic.client.model.elemental.BlizzModel;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlizzEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class BlizzRenderer extends GeoEntityRenderer<BlizzEntity> {
