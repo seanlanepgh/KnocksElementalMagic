@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/ice_hood"
+    "layer0": "knockselementalmagic:items/ice_hood"
   }
 }

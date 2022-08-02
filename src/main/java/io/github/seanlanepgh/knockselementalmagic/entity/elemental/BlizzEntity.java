@@ -1,5 +1,6 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
 
+import io.github.seanlanepgh.knockselementalmagic.core.*;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -97,7 +98,7 @@ public class BlizzEntity extends Monster implements IAnimatable, IAnimationTicka
             }
 
             for (int i = 0; i < 2; ++i) {
-                this.level.addParticle(ParticleTypes.SNOWFLAKE, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+                this.level.addParticle(KnocksParticles.SNOWFLAKE.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
             }
         }
 

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/soul_rune"
+    "layer0": "knockselementalmagic:items/soul_rune"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/novice_ice_staff"
+    "layer0": "knockselementalmagic:items/novice_ice_staff"
   }
 }

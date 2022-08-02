@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/master_air_staff"
+    "layer0": "knockselementalmagic:items/master_air_staff"
   }
 }

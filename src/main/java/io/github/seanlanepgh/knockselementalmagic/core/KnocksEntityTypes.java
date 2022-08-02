@@ -21,6 +21,9 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<BlizzEntity>> BLIZZ = ENTITY_TYPES.register("blizz",
             () -> EntityType.Builder.of(BlizzEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz").toString()));
+    public static final RegistryObject<EntityType<QuakeEntity>> QUAKE = ENTITY_TYPES.register("quake",
+            () -> EntityType.Builder.of(QuakeEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
+                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake").toString()));
 //    public static final RegistryObject<EntityType<?>> EARTH_SPIDER = ENTITY_TYPES.register("earth_spider",
 //            () -> EntityType.Builder.of(EarthSpiderEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
 //                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "earth_spider").toString()));

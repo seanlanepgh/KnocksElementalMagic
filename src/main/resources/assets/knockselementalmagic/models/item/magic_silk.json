@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/magic_silk"
+    "layer0": "knockselementalmagic:items/magic_silk"
   }
 }

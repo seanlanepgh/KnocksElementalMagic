@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/fire_boots"
+    "layer0": "knockselementalmagic:items/fire_boots"
   }
 }

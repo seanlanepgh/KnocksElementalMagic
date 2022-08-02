@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/ice_robe_bottoms"
+    "layer0": "knockselementalmagic:items/ice_robe_bottoms"
   }
 }

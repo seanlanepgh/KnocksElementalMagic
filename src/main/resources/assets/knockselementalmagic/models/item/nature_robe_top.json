@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/nature_robe_top"
+    "layer0": "knockselementalmagic:items/nature_robe_top"
   }
 }

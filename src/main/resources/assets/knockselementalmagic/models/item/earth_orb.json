@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knocks:item/earth_orb"
+    "layer0": "knockselementalmagic:items/earth_orb"
   }
 }
