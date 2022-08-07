@@ -9,10 +9,12 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlizzEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraftforge.api.distmarker.Dist;
@@ -45,6 +47,7 @@ public final class ClientModEvents {
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ.get(), BlizzRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE.get(), QuakeRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.ICICLE.get(), IcicleRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.TORNADO.get(), ElementalRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.SMALL_EARTHBALL.get(), SmallEarthBallRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.SMALL_AIRBALL.get(), SmallAirBallRenderer::new);

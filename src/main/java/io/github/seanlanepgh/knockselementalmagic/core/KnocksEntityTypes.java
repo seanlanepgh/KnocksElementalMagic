@@ -5,14 +5,11 @@ import io.github.seanlanepgh.knockselementalmagic.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.awt.event.InputEvent;
 
 public class KnocksEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -21,6 +18,9 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<BlizzEntity>> BLIZZ = ENTITY_TYPES.register("blizz",
             () -> EntityType.Builder.of(BlizzEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz").toString()));
+    public static final RegistryObject<EntityType<Icicle>> ICICLE = ENTITY_TYPES.register("icicle",
+            () ->  EntityType.Builder.<Icicle>of(Icicle::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "icicle").toString()));
     public static final RegistryObject<EntityType<QuakeEntity>> QUAKE = ENTITY_TYPES.register("quake",
             () -> EntityType.Builder.of(QuakeEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake").toString()));
