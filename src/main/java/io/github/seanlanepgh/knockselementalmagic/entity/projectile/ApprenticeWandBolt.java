@@ -48,7 +48,7 @@ public class ApprenticeWandBolt extends AbstractHurtingProjectile implements Ite
 	         }
 
 	      }
-	   }
+       }
 
 	   protected void onHitBlock(BlockHitResult p_37384_) {
 	      super.onHitBlock(p_37384_);

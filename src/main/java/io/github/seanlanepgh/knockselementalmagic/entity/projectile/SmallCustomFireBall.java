@@ -106,8 +106,7 @@ public class SmallCustomFireBall extends AbstractHurtingProjectile implements It
 				}
 			}
 		}
-
-	}
+    }
 
 	@Override
 	protected void onHitBlock(BlockHitResult p_37384_) {

@@ -116,8 +116,7 @@ public class LargeEarthBall extends AbstractHurtingProjectile implements ItemSup
 				}
 
 		}
-
-	}
+    }
 
 	@Override
 	protected void onHitBlock(BlockHitResult p_37384_) {

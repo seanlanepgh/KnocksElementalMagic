@@ -103,8 +103,7 @@ public class SmallAirBall extends AbstractHurtingProjectile implements ItemSuppl
 				}
 			}
 		}
-
-	}
+    }
 
 	@Override
 	protected void onHitBlock(BlockHitResult p_37384_) {
