@@ -254,7 +254,7 @@ public class BlizzEntity extends Monster implements IAnimatable, IAnimationTicka
                             }
 
                             for(int i = 0; i < 1; ++i) {
-                                SmallFireball smallfireball = new SmallFireball(this.blizz.level, this.blizz, this.blizz.getRandom().triangle(d1, 2.297D * d4), d2, this.blaze.getRandom().triangle(d3, 2.297D * d4));
+                                SmallFireball smallfireball = new SmallFireball(this.blizz.level, this.blizz, this.blizz.getRandom().triangle(d1, 2.297D * d4), d2, this.blizz.getRandom().triangle(d3, 2.297D * d4));
                                 smallfireball.setPos(smallfireball.getX(), this.blizz.getY(0.5D) + 0.5D, smallfireball.getZ());
                                 this.blizz.level.addFreshEntity(smallfireball);
                                 //Icicle icicle = new Icicle(this.blizz.level, this.blizz ,this.blizz.getRandom().triangle(d1, 2.297 * d4), d2, this.blizz.getRandom().triangle(d3, 2.297 * d4));
