@@ -1,9 +1,8 @@
 package io.github.seanlanepgh.knockselementalmagic;
 
 import com.mojang.logging.LogUtils;
-import io.github.seanlanepgh.knockselementalmagic.core.KnocksItems;
-import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
-import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
+
+import io.github.seanlanepgh.knockselementalmagic.core.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.BlizzRenderer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
