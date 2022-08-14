@@ -21,6 +21,9 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<Icicle>> ICICLE = ENTITY_TYPES.register("icicle",
             () ->  EntityType.Builder.<Icicle>of(Icicle::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "icicle").toString()));
+    public static final RegistryObject<EntityType<BlizzBolt>> BLIZZ_BOLT = ENTITY_TYPES.register("blizz_bolt",
+            () ->  EntityType.Builder.<BlizzBolt>of(BlizzBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_bolt").toString()));
     public static final RegistryObject<EntityType<QuakeEntity>> QUAKE = ENTITY_TYPES.register("quake",
             () -> EntityType.Builder.of(QuakeEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake").toString()));
@@ -77,33 +80,33 @@ public class KnocksEntityTypes {
 //    public static final RegistryObject<EntityType<?>> JUNGLE_SPIDER = ENTITY_TYPES.register("jungle_spider",
 //            () -> EntityType.Builder.of(JungleSpiderEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
 //                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "jungle_spider").toString()));
-    public static final RegistryObject<EntityType<SmallIceBall>> SMALL_ICEBALL = ENTITY_TYPES.register("small_iceball",
-            () ->  EntityType.Builder.<SmallIceBall>of(SmallIceBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_iceball").toString()));
-
-    public static final RegistryObject<EntityType<SmallEarthBall>> SMALL_EARTHBALL = ENTITY_TYPES.register("small_earthball",
-            () ->  EntityType.Builder.<SmallEarthBall>of(SmallEarthBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_earthball").toString()));
-    public static final RegistryObject<EntityType<SmallAirBall>> SMALL_AIRBALL = ENTITY_TYPES.register("small_airball",
-            () ->  EntityType.Builder.<SmallAirBall>of(SmallAirBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_airball").toString()));
-    public static final RegistryObject<EntityType<SmallCustomFireBall>> SMALL_FIREBALL = ENTITY_TYPES.register("small_fireball",
-            () ->  EntityType.Builder.<SmallCustomFireBall>of(SmallCustomFireBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_fireball").toString()));
-
-    public static final RegistryObject<EntityType<LargeIceBall>> LARGE_ICEBALL = ENTITY_TYPES.register("large_iceball",
-            () ->  EntityType.Builder.<LargeIceBall>of(LargeIceBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_iceball").toString()));
-
-    public static final RegistryObject<EntityType<LargeEarthBall>> LARGE_EARTHBALL = ENTITY_TYPES.register("large_earthball",
-            () ->  EntityType.Builder.<LargeEarthBall>of(LargeEarthBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_earthball").toString()));
-    public static final RegistryObject<EntityType<LargeAirBall>> LARGE_AIRBALL = ENTITY_TYPES.register("large_airball",
-            () ->  EntityType.Builder.<LargeAirBall>of(LargeAirBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_airball").toString()));
-    public static final RegistryObject<EntityType<LargeCustomFireBall>> LARGE_FIREBALL = ENTITY_TYPES.register("large_fireball",
-            () ->  EntityType.Builder.<LargeCustomFireBall>of(LargeCustomFireBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_fireball").toString()));
+//    public static final RegistryObject<EntityType<SmallIceBall>> SMALL_ICEBALL = ENTITY_TYPES.register("small_iceball",
+//            () ->  EntityType.Builder.<SmallIceBall>of(SmallIceBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_iceball").toString()));
+//
+//    public static final RegistryObject<EntityType<SmallEarthBall>> SMALL_EARTHBALL = ENTITY_TYPES.register("small_earthball",
+//            () ->  EntityType.Builder.<SmallEarthBall>of(SmallEarthBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_earthball").toString()));
+//    public static final RegistryObject<EntityType<SmallAirBall>> SMALL_AIRBALL = ENTITY_TYPES.register("small_airball",
+//            () ->  EntityType.Builder.<SmallAirBall>of(SmallAirBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_airball").toString()));
+//    public static final RegistryObject<EntityType<SmallCustomFireBall>> SMALL_FIREBALL = ENTITY_TYPES.register("small_fireball",
+//            () ->  EntityType.Builder.<SmallCustomFireBall>of(SmallCustomFireBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "small_fireball").toString()));
+//
+//    public static final RegistryObject<EntityType<LargeIceBall>> LARGE_ICEBALL = ENTITY_TYPES.register("large_iceball",
+//            () ->  EntityType.Builder.<LargeIceBall>of(LargeIceBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_iceball").toString()));
+//
+//    public static final RegistryObject<EntityType<LargeEarthBall>> LARGE_EARTHBALL = ENTITY_TYPES.register("large_earthball",
+//            () ->  EntityType.Builder.<LargeEarthBall>of(LargeEarthBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_earthball").toString()));
+//    public static final RegistryObject<EntityType<LargeAirBall>> LARGE_AIRBALL = ENTITY_TYPES.register("large_airball",
+//            () ->  EntityType.Builder.<LargeAirBall>of(LargeAirBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_airball").toString()));
+//    public static final RegistryObject<EntityType<LargeCustomFireBall>> LARGE_FIREBALL = ENTITY_TYPES.register("large_fireball",
+//            () ->  EntityType.Builder.<LargeCustomFireBall>of(LargeCustomFireBall::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+//                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "large_fireball").toString()));
 //    public static final RegistryObject<EntityType<TornadoEntity>> TORNADO = ENTITY_TYPES.register("tornado",
 //            () -> EntityType.Builder.of(TornadoEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
 //                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado").toString()));
