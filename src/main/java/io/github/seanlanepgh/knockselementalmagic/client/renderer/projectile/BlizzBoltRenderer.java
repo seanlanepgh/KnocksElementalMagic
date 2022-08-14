@@ -4,9 +4,6 @@ package io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-import io.github.seanlanepgh.knockselementalmagic.*;
-import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.*;
-
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -25,9 +22,9 @@ import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.entity.*;
 import net.minecraft.resources.*;
 
-    public class ElementalBoltRenderer extends GeoProjectilesRenderer<BlizzBolt> {
-        public ElementalBoltRenderer(EntityRendererProvider.Context renderManager) {
-            super(renderManager, new ElementalBoltModel());
+    public class BlizzBoltRenderer extends GeoProjectilesRenderer<BlizzBolt> {
+        public BlizzBoltRenderer(EntityRendererProvider.Context renderManager) {
+            super(renderManager, new BlizzBoltModel());
             // this.shadowRadius = 1.0f;
         }
 

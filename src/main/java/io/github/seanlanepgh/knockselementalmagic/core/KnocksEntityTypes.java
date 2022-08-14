@@ -24,6 +24,17 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<BlizzBolt>> BLIZZ_BOLT = ENTITY_TYPES.register("blizz_bolt",
             () ->  EntityType.Builder.<BlizzBolt>of(BlizzBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_bolt").toString()));
+    public static final RegistryObject<EntityType<QuakeBolt>> QUAKE_BOLT = ENTITY_TYPES.register("quake_bolt",
+            () ->  EntityType.Builder.<QuakeBolt>of(QuakeBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_bolt").toString()));
+
+    public static final RegistryObject<EntityType<BlazeBolt>> BLAZE_BOLT = ENTITY_TYPES.register("blaze_bolt",
+            () ->  EntityType.Builder.<BlazeBolt>of(BlazeBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blaze_bolt").toString()));
+
+    public static final RegistryObject<EntityType<TornadoBolt>> TORNADO_BOLT = ENTITY_TYPES.register("tornado_bolt",
+            () ->  EntityType.Builder.<TornadoBolt>of(TornadoBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado_bolt").toString()));
     public static final RegistryObject<EntityType<QuakeEntity>> QUAKE = ENTITY_TYPES.register("quake",
             () -> EntityType.Builder.of(QuakeEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake").toString()));

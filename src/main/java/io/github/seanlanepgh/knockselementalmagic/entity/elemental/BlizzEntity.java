@@ -141,7 +141,7 @@ public class BlizzEntity extends KnocksEntity implements IAnimatable, IAnimation
         }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.idle", true));
         return PlayState.CONTINUE;
-
+    }
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Blaze.class, EntityDataSerializers.BYTE);
 

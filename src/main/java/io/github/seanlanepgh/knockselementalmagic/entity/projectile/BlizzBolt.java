@@ -108,11 +108,11 @@ public class BlizzBolt extends AbstractHurtingProjectile implements IAnimatable 
 			return true;
 		}
 	}
-//
-//	@Override
-//	public boolean isPushedByFluid() {
-//		return false;
-//	}
+
+	@Override
+	public boolean isPushedByFluid() {
+		return false;
+	}
 
 	@Override
 	public boolean isPickable() {

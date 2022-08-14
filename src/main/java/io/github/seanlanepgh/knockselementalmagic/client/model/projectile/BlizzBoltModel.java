@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import software.bernie.geckolib3.model.*;
 
-public class ElementalBoltModel extends AnimatedGeoModel<BlizzBolt> {
+public class BlizzBoltModel extends AnimatedGeoModel<BlizzBolt> {
 
         @Override
         public ResourceLocation getModelResource(BlizzBolt object) {
