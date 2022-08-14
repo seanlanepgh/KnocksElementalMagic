@@ -1,0 +1,158 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.knocksvanilla.elemental_bolt",
+        "texture_width": 64,
+        "texture_height": 64,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2.5,
+        "visible_bounds_offset": [
+          0,
+          0.75,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "bone2",
+          "pivot": [
+            0,
+            8,
+            0
+          ]
+        },
+        {
+          "name": "bone3",
+          "parent": "bone2",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "rotation": [
+            -45,
+            0,
+            90
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                5,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "inflate": -0.02,
+              "uv": [
+                0,
+                12
+              ]
+            },
+            {
+              "origin": [
+                -3,
+                5,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "inflate": -0.03,
+              "pivot": [
+                0,
+                8,
+                0
+              ],
+              "rotation": [
+                0,
+                -45,
+                0
+              ],
+              "uv": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "name": "bone",
+          "parent": "bone2",
+          "pivot": [
+            0,
+            8,
+            0
+          ],
+          "rotation": [
+            0,
+            -90,
+            0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -3,
+                5,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "inflate": -0.01,
+              "pivot": [
+                0,
+                8,
+                0
+              ],
+              "rotation": [
+                -90,
+                -90,
+                0
+              ],
+              "uv": [
+                18,
+                30
+              ]
+            },
+            {
+              "origin": [
+                -3,
+                5,
+                -3
+              ],
+              "size": [
+                6,
+                6,
+                6
+              ],
+              "pivot": [
+                0,
+                8,
+                0
+              ],
+              "rotation": [
+                0,
+                -45,
+                0
+              ],
+              "uv": [
+                0,
+                24
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
