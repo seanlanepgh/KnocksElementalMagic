@@ -10,7 +10,7 @@ import net.minecraft.world.entity.ai.goal.Goal;
 
 public class RangedAttackGoal extends Goal {
 	private final KnocksEntity entity;
-	private double moveSpeedAmp = 5;
+	private double moveSpeedAmp = 1;
 	private int attackTime = -1;
 	private AbstractRangedAttack attack;
 	private boolean multiShot;

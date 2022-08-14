@@ -66,30 +66,19 @@ public abstract class AbstractRangedAttack implements IRangedAttack {
 
 //	@Override
 public void shoot() {
-		LivingEntity livingentity = this.parentEntity.getTarget();
-		Level world = this.parentEntity.getCommandSenderWorld();
-		Vec3 vector3d = this.parentEntity.getViewVector(1.0F);
-		double d2 = livingentity.getX() - (this.parentEntity.getX() + vector3d.x * xOffSetModifier);
-		double d3 = livingentity.getY(0.5D) - (this.parentEntity.getY(entityHeightFraction));
-		double d4 = livingentity.getZ() - (this.parentEntity.getZ() + vector3d.z * zOffSetModifier); //                            System.out.println(icicle);
-	                            System.out.println(d2);
-	                            System.out.println(d3);
-	                            System.out.println(d4);
-		Projectile projectile = getProjectile(world, rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
-
-		System.out.println(projectile);
-
-		projectile.setPos(this.parentEntity.getX() + vector3d.x * xOffSetModifier,
-				this.parentEntity.getY(entityHeightFraction), this.parentEntity.getZ() + vector3d.z * zOffSetModifier);
-		projectile.shootFromRotation((Entity) this.parentEntity, (float) this.parentEntity.getX(), (float) this.parentEntity.getY(), (float) this.parentEntity.getZ(),2.0F,0.95F);
-
-	System.out.println(projectile);
-	//projectile.shootFromRotation(livingentity, (float)d2,(float)d3,(float)d4, 1.0F, (float) (1.0D - accuracy));
-	//projectile.shoot(rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
-		world.addFreshEntity(projectile);
-		if (sound == null)
-			getDefaultAttackSound().play(this.parentEntity);
-		else
-			sound.play(this.parentEntity);
+	LivingEntity livingentity = this.parentEntity.getTarget();
+	Level world = this.parentEntity.getCommandSenderWorld();
+	Vec3 vector3d = this.parentEntity.getViewVector(1.0F);
+	double d2 = livingentity.getX() - (this.parentEntity.getX() + vector3d.x * xOffSetModifier);
+	double d3 = livingentity.getY(0.5D) - (this.parentEntity.getY(entityHeightFraction));
+	double d4 = livingentity.getZ() - (this.parentEntity.getZ() + vector3d.z * zOffSetModifier);
+	Projectile projectile = getProjectile(world, rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
+	projectile.setPos(this.parentEntity.getX() + vector3d.x * xOffSetModifier,
+			this.parentEntity.getY(entityHeightFraction), this.parentEntity.getZ() + vector3d.z * zOffSetModifier);
+	world.addFreshEntity(projectile);
+	if (sound == null)
+		getDefaultAttackSound().play(this.parentEntity);
+	else
+		sound.play(this.parentEntity);
 	}
 }
