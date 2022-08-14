@@ -49,30 +49,30 @@ public class KWDamageSource {
 
  
 
-   public static DamageSource iceBall(SmallIceBall p_19350_, @Nullable Entity p_19351_) {
-      return p_19351_ == null ? (new IndirectEntityDamageSource("freeze", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("iceball", p_19350_, p_19351_)).setProjectile();
-   }
-   public static DamageSource earthBall(SmallEarthBall p_19350_, @Nullable Entity p_19351_) {
-	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("earthball", p_19350_, p_19351_)).setProjectile();
-	   }
-   public static DamageSource airBall(SmallAirBall smallAirBall, @Nullable Entity p_19351_) {
-	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallAirBall, smallAirBall)).setProjectile() : (new IndirectEntityDamageSource("airball", smallAirBall, p_19351_)).setProjectile();
-	   }
-   public static DamageSource fireBall(SmallCustomFireBall smallFireBall, @Nullable Entity p_19351_) {
-	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallFireBall, smallFireBall)).setProjectile() : (new IndirectEntityDamageSource("fireball", smallFireBall, p_19351_)).setProjectile();
-	   }
-   
-   public static DamageSource largeIceBall(LargeIceBall p_19350_, @Nullable Entity p_19351_) {
-	      return p_19351_ == null ? (new IndirectEntityDamageSource("freeze", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("iceball", p_19350_, p_19351_)).setProjectile();
-	   }
-	   public static DamageSource largeEarthBall(LargeEarthBall  p_19350_, @Nullable Entity p_19351_) {
-		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("earthball", p_19350_, p_19351_)).setProjectile();
-		   }
-	   public static DamageSource largeAirBall(LargeAirBall  smallAirBall, @Nullable Entity p_19351_) {
-		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallAirBall, smallAirBall)).setProjectile() : (new IndirectEntityDamageSource("airball", smallAirBall, p_19351_)).setProjectile();
-		   }
-	   public static DamageSource largeFireBall(LargeCustomFireBall  smallFireBall, @Nullable Entity p_19351_) {
-		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallFireBall, smallFireBall)).setProjectile() : (new IndirectEntityDamageSource("fireball", smallFireBall, p_19351_)).setProjectile();
-		   }
+//   public static DamageSource iceBall(SmallIceBall p_19350_, @Nullable Entity p_19351_) {
+//      return p_19351_ == null ? (new IndirectEntityDamageSource("freeze", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("iceball", p_19350_, p_19351_)).setProjectile();
+//   }
+//   public static DamageSource earthBall(SmallEarthBall p_19350_, @Nullable Entity p_19351_) {
+//	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("earthball", p_19350_, p_19351_)).setProjectile();
+//	   }
+//   public static DamageSource airBall(SmallAirBall smallAirBall, @Nullable Entity p_19351_) {
+//	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallAirBall, smallAirBall)).setProjectile() : (new IndirectEntityDamageSource("airball", smallAirBall, p_19351_)).setProjectile();
+//	   }
+//   public static DamageSource fireBall(SmallCustomFireBall smallFireBall, @Nullable Entity p_19351_) {
+//	      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallFireBall, smallFireBall)).setProjectile() : (new IndirectEntityDamageSource("fireball", smallFireBall, p_19351_)).setProjectile();
+//	   }
+//
+//   public static DamageSource largeIceBall(LargeIceBall p_19350_, @Nullable Entity p_19351_) {
+//	      return p_19351_ == null ? (new IndirectEntityDamageSource("freeze", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("iceball", p_19350_, p_19351_)).setProjectile();
+//	   }
+//	   public static DamageSource largeEarthBall(LargeEarthBall  p_19350_, @Nullable Entity p_19351_) {
+//		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("earthball", p_19350_, p_19351_)).setProjectile();
+//		   }
+//	   public static DamageSource largeAirBall(LargeAirBall  smallAirBall, @Nullable Entity p_19351_) {
+//		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallAirBall, smallAirBall)).setProjectile() : (new IndirectEntityDamageSource("airball", smallAirBall, p_19351_)).setProjectile();
+//		   }
+//	   public static DamageSource largeFireBall(LargeCustomFireBall  smallFireBall, @Nullable Entity p_19351_) {
+//		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallFireBall, smallFireBall)).setProjectile() : (new IndirectEntityDamageSource("fireball", smallFireBall, p_19351_)).setProjectile();
+//		   }
 
 }
