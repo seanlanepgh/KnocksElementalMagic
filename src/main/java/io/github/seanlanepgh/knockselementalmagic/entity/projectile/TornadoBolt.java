@@ -81,7 +81,7 @@ public class TornadoBolt extends AbstractHurtingProjectile implements IAnimatabl
 
     @Override
     protected ParticleOptions getTrailParticle() {
-        return KnocksParticles.SNOWFLAKE.get();
+        return ParticleTypes.CLOUD;
     }
 
     @Override

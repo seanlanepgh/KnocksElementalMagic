@@ -21,14 +21,14 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 
-public class QuakeBlast extends AbstractHurtingProjectile implements IAnimatable {
+public class TornadoBlast extends AbstractHurtingProjectile implements IAnimatable {
 
     protected int timeInAir;
     protected boolean inAir;
     private int ticksInAir;
     private float directHitDamage = 2;
 
-    public QuakeBlast(EntityType<QuakeBlast> entity, Level world) {
+    public TornadoBlast(EntityType<TornadoBlast> entity, Level world) {
         super(entity, world);
     }
 
@@ -41,7 +41,7 @@ public class QuakeBlast extends AbstractHurtingProjectile implements IAnimatable
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<QuakeBlast>(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<TornadoBlast>(this, "controller", 0, this::predicate));
     }
 
     @Override
@@ -49,13 +49,13 @@ public class QuakeBlast extends AbstractHurtingProjectile implements IAnimatable
         return this.factory;
     }
 
-    public QuakeBlast(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ,
+    public TornadoBlast(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ,
                       float directHitDamage) {
         super(KnocksEntityTypes.BLIZZ_BLAST.get(), shooter, accelX, accelY, accelZ, worldIn);
         this.directHitDamage = directHitDamage;
     }
 
-    public QuakeBlast(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
+    public TornadoBlast(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
         super(KnocksEntityTypes.BLIZZ_BLAST.get(), x, y, z, accelX, accelY, accelZ, worldIn);
     }
 
@@ -139,7 +139,7 @@ public class QuakeBlast extends AbstractHurtingProjectile implements IAnimatable
     @Override
     public void remove(RemovalReason reason) {
         AreaEffectCloud areaeffectcloudentity = new AreaEffectCloud(this.level, this.getX(), this.getY(), this.getZ());
-        areaeffectcloudentity.setParticle(ParticleTypes.ASH);
+        areaeffectcloudentity.setParticle(ParticleTypes.CLOUD);
         areaeffectcloudentity.setRadius(6);
         areaeffectcloudentity.setDuration(1);
         areaeffectcloudentity.setPos(this.getX(), this.getY(), this.getZ());
