@@ -14,10 +14,12 @@ import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
+import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlazeKnightEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlizzEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.client.renderer.entity.BlazeRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -41,6 +43,7 @@ public final class ClientModEvents {
 	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
 		event.put(KnocksEntityTypes.BLIZZ.get(), BlizzEntity.setAttributes());
 		event.put(KnocksEntityTypes.QUAKE.get(), BlizzEntity.setAttributes());
+		event.put(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightEntity.setAttributes());
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
@@ -53,6 +56,7 @@ public final class ClientModEvents {
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BOLT.get(), BlazeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BLAST.get(), BlizzBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BLAST.get(), BlazeBlastRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BOLT.get(), TornadoBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BLAST.get(), TornadoBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BOLT.get(), QuakeBoltRenderer::new);
