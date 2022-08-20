@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.knocksvanilla.elemental_strike",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0.5, 5.5, 1.5],
+					"cubes": [
+						{"origin": [0, 5, 3], "size": [1, 1, 1], "uv": [9, 0]},
+						{"origin": [-1, 4, 0], "size": [3, 3, 3], "uv": [0, 0]},
+						{"origin": [0, 5, -1], "size": [1, 1, 1], "uv": [4, 8]},
+						{"origin": [-2, 5, 1], "size": [1, 1, 1], "uv": [0, 8]},
+						{"origin": [2, 5, 1], "size": [1, 1, 1], "uv": [7, 7]},
+						{"origin": [0, 7, 1], "size": [1, 1, 1], "uv": [4, 6]},
+						{"origin": [0, 3, 1], "size": [1, 1, 1], "uv": [0, 6]}
+					]
+				}
+			]
+		}
+	]
+}

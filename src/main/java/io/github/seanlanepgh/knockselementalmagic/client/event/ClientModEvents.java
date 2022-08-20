@@ -8,7 +8,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
-import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
+//import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
@@ -63,8 +63,11 @@ public final class ClientModEvents {
 		event.registerEntityRenderer(KnocksEntityTypes.ICICLE.get(), IcicleRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BOLT.get(), TornadoBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BLAST.get(), TornadoBlastRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_STRIKE.get(), TornadoStrikeRenderer::new);
+
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BOLT.get(), QuakeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BLAST.get(), QuakeBlastRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_STRIKE.get(), QuakeStrikeRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.TORNADO.get(), ElementalRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.SMALL_EARTHBALL.get(), SmallEarthBallRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.SMALL_AIRBALL.get(), SmallAirBallRenderer::new);

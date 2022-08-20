@@ -168,10 +168,10 @@ public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimation
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.quake.walk", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.quake.idle", true));
         return PlayState.CONTINUE;
 
     }
