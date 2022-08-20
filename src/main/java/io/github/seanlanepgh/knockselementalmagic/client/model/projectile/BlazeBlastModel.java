@@ -10,16 +10,16 @@ public class BlazeBlastModel extends AnimatedGeoModel<BlazeBlast> {
 
     @Override
     public ResourceLocation getModelResource(BlazeBlast object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "geo/elemental_bolt.geo.json");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "geo/elemental_blast.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(BlazeBlast object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blizz_bolt.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blaze_blast.png");
 
     }
     @Override
     public ResourceLocation getAnimationResource(BlazeBlast animatable) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "animations/elemental_bolt.animation.json");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "animations/elemental_blast.animation.json");
     }
 }
