@@ -35,7 +35,7 @@ public class BlizzBlast extends AbstractHurtingProjectile implements IAnimatable
     private AnimationFactory factory = new AnimationFactory(this);
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.elemental_bolt.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.elemental_blast.idle", true));
         return PlayState.CONTINUE;
     }
 
