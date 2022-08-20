@@ -44,6 +44,7 @@ public final class ClientModEvents {
 		event.put(KnocksEntityTypes.BLIZZ.get(), BlizzEntity.setAttributes());
 		event.put(KnocksEntityTypes.QUAKE.get(), BlizzEntity.setAttributes());
 		event.put(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightEntity.setAttributes());
+		event.put(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlazeKnightEntity.setAttributes());
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
@@ -51,12 +52,15 @@ public final class ClientModEvents {
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ.get(), BlizzRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE.get(), QuakeRenderer::new);
-		event.registerEntityRenderer(KnocksEntityTypes.ICICLE.get(), IcicleRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BOLT.get(), BlizzBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BOLT.get(), BlazeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BLAST.get(), BlizzBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BLAST.get(), BlazeBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlizzKnightRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_STRIKE.get(), BlazeStrikeRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_STRIKE.get(), BlizzStrikeRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.ICICLE.get(), IcicleRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BOLT.get(), TornadoBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BLAST.get(), TornadoBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BOLT.get(), QuakeBoltRenderer::new);

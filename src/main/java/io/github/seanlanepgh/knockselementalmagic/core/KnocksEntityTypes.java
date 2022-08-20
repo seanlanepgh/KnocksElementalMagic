@@ -18,16 +18,12 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<BlizzEntity>> BLIZZ = ENTITY_TYPES.register("blizz",
             () -> EntityType.Builder.of(BlizzEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz").toString()));
-    public static final RegistryObject<EntityType<Icicle>> ICICLE = ENTITY_TYPES.register("icicle",
-            () ->  EntityType.Builder.<Icicle>of(Icicle::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
-                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "icicle").toString()));
     public static final RegistryObject<EntityType<BlizzBlast>> BLIZZ_BLAST = ENTITY_TYPES.register("blizz_blast",
             () ->  EntityType.Builder.<BlizzBlast>of(BlizzBlast::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_blast").toString()));
     public static final RegistryObject<EntityType<BlizzBolt>> BLIZZ_BOLT = ENTITY_TYPES.register("blizz_bolt",
             () ->  EntityType.Builder.<BlizzBolt>of(BlizzBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_bolt").toString()));
-
     public static final RegistryObject<EntityType<BlazeBlast>> BLAZE_BLAST = ENTITY_TYPES.register("blaze_blast",
             () ->  EntityType.Builder.<BlazeBlast>of(BlazeBlast::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blaze_blast").toString()));
@@ -37,6 +33,19 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<BlazeKnightEntity>> BLAZE_KNIGHT = ENTITY_TYPES.register("blaze_knight",
             () -> EntityType.Builder.of(BlazeKnightEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "blaze_knight").toString()));
+    public static final RegistryObject<EntityType<BlizzKnightEntity>> BLIZZ_KNIGHT = ENTITY_TYPES.register("blizz_knight",
+            () -> EntityType.Builder.of(BlizzKnightEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
+                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_knight").toString()));
+
+    public static final RegistryObject<EntityType<BlazeStrike>> BLAZE_STRIKE = ENTITY_TYPES.register("blaze_strike",
+            () ->  EntityType.Builder.<BlazeStrike>of(BlazeStrike::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blaze_strike").toString()));
+    public static final RegistryObject<EntityType<BlizzStrike>> BLIZZ_STRIKE = ENTITY_TYPES.register("blizz_strike",
+            () ->  EntityType.Builder.<BlizzStrike>of(BlizzStrike::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "blizz_strike").toString()));
+    public static final RegistryObject<EntityType<Icicle>> ICICLE = ENTITY_TYPES.register("icicle",
+            () ->  EntityType.Builder.<Icicle>of(Icicle::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "icicle").toString()));
     public static final RegistryObject<EntityType<QuakeEntity>> QUAKE = ENTITY_TYPES.register("quake",
             () -> EntityType.Builder.of(QuakeEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake").toString()));
@@ -46,12 +55,20 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<QuakeBolt>> QUAKE_BOLT = ENTITY_TYPES.register("quake_bolt",
             () ->  EntityType.Builder.<QuakeBolt>of(QuakeBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_bolt").toString()));
+
+    public static final RegistryObject<EntityType<QuakeStrike>> QUAKE_STRIKE = ENTITY_TYPES.register("quake_strike",
+            () ->  EntityType.Builder.<QuakeStrike>of(QuakeStrike::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_strike").toString()));
     public static final RegistryObject<EntityType<TornadoBlast>> TORNADO_BLAST = ENTITY_TYPES.register("tornado_blast",
             () ->  EntityType.Builder.<TornadoBlast>of(TornadoBlast::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado_blast").toString()));
     public static final RegistryObject<EntityType<TornadoBolt>> TORNADO_BOLT = ENTITY_TYPES.register("tornado_bolt",
             () ->  EntityType.Builder.<TornadoBolt>of(TornadoBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado_bolt").toString()));
+
+    public static final RegistryObject<EntityType<TornadoStrike>> TORNADO_STRIKE = ENTITY_TYPES.register("tornado_strike",
+            () ->  EntityType.Builder.<TornadoStrike>of(TornadoStrike::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado_strike").toString()));
 //    public static final RegistryObject<EntityType<?>> EARTH_SPIDER = ENTITY_TYPES.register("earth_spider",
 //            () -> EntityType.Builder.of(EarthSpiderEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
 //                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "earth_spider").toString()));
