@@ -1,42 +1,11 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
 
-import net.minecraft.core.particles.*;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.monster.Blaze;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.IAnimationTickable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-
-import java.util.EnumSet;
-
-
 import io.github.seanlanepgh.knockselementalmagic.core.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.ai.goal.RangedAttackGoal;
 import io.github.seanlanepgh.knockselementalmagic.entity.attack.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -67,12 +36,12 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.EnumSet;
 
-public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimationTickable, Enemy {
+public class BlizzKnightEntity extends KnocksEntity implements IAnimatable, IAnimationTickable, Enemy {
     private float allowedHeightOffset = 0.5F;
     private int nextHeightOffsetChangeTick;
     private AnimationFactory factory = new AnimationFactory(this);
 
-    public QuakeEntity(EntityType<? extends KnocksEntity> entityType, Level level) {
+    public BlizzKnightEntity(EntityType<? extends KnocksEntity> entityType, Level level) {
         super(entityType, level);
     }
     public static AttributeSupplier setAttributes() {
@@ -115,7 +84,7 @@ public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimation
             }
 
             for (int i = 0; i < 2; ++i) {
-                this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+                this.level.addParticle(KnocksParticles.SNOWFLAKE.get() , this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
             }
         }
 
@@ -124,7 +93,7 @@ public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimation
 
     protected void registerGoals() {
         this.goalSelector.addGoal(4, new RangedAttackGoal(this,
-                new QuakeEntity.QuakeBoltAttack(this).setProjectileOriginOffset(0.8, 0.5, 0.8)
+                new BlizzKnightEntity.BlizzKnightBoltAttack(this).setProjectileOriginOffset(0.8, 0.5, 0.8)
                         .setDamage(3.0F),1.0F));
 
         this.goalSelector.addGoal(5, new MoveTowardsRestrictionGoal(this, 1.0D));
@@ -163,39 +132,40 @@ public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimation
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<QuakeEntity>(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<BlizzKnightEntity>(this, "controller", 0, this::predicate));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz_knight.walk", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz_knight.idle", true));
         return PlayState.CONTINUE;
-
     }
-        private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(QuakeEntity.class, EntityDataSerializers.BYTE);
 
-        public class QuakeBoltAttack extends AbstractRangedAttack {
+    private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(BlizzKnightEntity.class, EntityDataSerializers.BYTE);
 
-            public QuakeBoltAttack(QuakeEntity parentEntity, double xOffSetModifier, double entityHeightFraction,
-                                   double zOffSetModifier, float damage) {
-                super(parentEntity, xOffSetModifier, entityHeightFraction, zOffSetModifier, damage);
-            }
+    public class BlizzKnightBoltAttack extends AbstractRangedAttack {
 
-            public QuakeBoltAttack(QuakeEntity parentEntity) {
-                super(parentEntity);
-            }
-
-            @Override
-            public AttackSound getDefaultAttackSound() {
-                return new AttackSound(SoundEvents.BLAZE_SHOOT, 0.7F, 1);
-            }
-
-            @Override
-            public Projectile getProjectile(Level world, double d2, double d3, double d4) {
-                return new QuakeBolt(world, this.parentEntity, d2, d3, d4, damage);
-            }
+        public BlizzKnightBoltAttack(BlizzKnightEntity parentEntity, double xOffSetModifier, double entityHeightFraction,
+                                     double zOffSetModifier, float damage) {
+            super(parentEntity, xOffSetModifier, entityHeightFraction, zOffSetModifier, damage);
         }
+
+        public BlizzKnightBoltAttack(BlizzKnightEntity parentEntity) {
+            super(parentEntity);
+        }
+
+        @Override
+        public AttackSound getDefaultAttackSound() {
+            return new AttackSound(SoundEvents.BLAZE_SHOOT, 0.7F, 1);
+        }
+
+        @Override
+        public Projectile getProjectile(Level world, double d2, double d3, double d4) {
+            return new BlizzBlast(world, this.parentEntity, d2, d3, d4, damage);
+        }
+    }
+
 }

@@ -143,7 +143,7 @@ public class BlizzEntity extends KnocksEntity implements IAnimatable, IAnimation
         return PlayState.CONTINUE;
     }
 
-    private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(Blaze.class, EntityDataSerializers.BYTE);
+    private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(BlizzEntity.class, EntityDataSerializers.BYTE);
 
     public class BlizzBoltAttack extends AbstractRangedAttack {
 
@@ -163,7 +163,8 @@ public class BlizzEntity extends KnocksEntity implements IAnimatable, IAnimation
 
         @Override
         public Projectile getProjectile(Level world, double d2, double d3, double d4) {
-            return new BlizzBolt(world, this.parentEntity, d2, d3, d4, damage);
+           // return new BlizzBolt(world, this.parentEntity, d2, d3, d4, damage);
+            return new BlizzBlast(world, this.parentEntity, d2, d3, d4, damage);
         }
     }
 

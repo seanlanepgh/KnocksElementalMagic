@@ -10,7 +10,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
-import software.bernie.geckolib3.model.*;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
 public class TornadoBlastRenderer extends GeoProjectilesRenderer<TornadoBlast> {

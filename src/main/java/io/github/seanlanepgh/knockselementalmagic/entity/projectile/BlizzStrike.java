@@ -27,7 +27,7 @@ public class BlizzStrike extends AbstractHurtingProjectile implements IAnimatabl
     private int ticksInAir;
     private float directHitDamage = 2;
 
-    public BlizzStrike(EntityType<BlazeBolt> entity, Level world) {
+    public BlizzStrike(EntityType<BlizzStrike> entity, Level world) {
         super(entity, world);
     }
 

@@ -1,15 +1,15 @@
-package io.github.seanlanepgh.knockselementalmagic.client.model.projectile;
+package io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
+import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastModel;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
-import software.bernie.geckolib3.model.*;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
 
