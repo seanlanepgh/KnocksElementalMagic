@@ -22,7 +22,7 @@ public class QuakeBoltRenderer extends GeoProjectilesRenderer<QuakeBolt> {
 
     @Override
     public ResourceLocation getTextureLocation(QuakeBolt instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blizz_bolt.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/quake_bolt.png");
     }
 
     @Override

@@ -30,7 +30,7 @@ public class BlazeBoltRenderer extends GeoProjectilesRenderer<BlazeBolt> {
 
     @Override
     public ResourceLocation getTextureLocation(BlazeBolt instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blizz_bolt.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blaze_bolt.png");
     }
 
     @Override

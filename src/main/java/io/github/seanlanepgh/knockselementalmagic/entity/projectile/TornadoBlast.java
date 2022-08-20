@@ -83,7 +83,7 @@ public class TornadoBlast extends AbstractHurtingProjectile implements IAnimatab
 
     @Override
     protected ParticleOptions getTrailParticle() {
-        return ParticleTypes.ASH;
+        return ParticleTypes.CLOUD;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class TornadoBoltRenderer extends GeoProjectilesRenderer<TornadoBolt> {
 
     @Override
     public ResourceLocation getTextureLocation(TornadoBolt instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blizz_bolt.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/tornado_bolt.png");
     }
 
     @Override

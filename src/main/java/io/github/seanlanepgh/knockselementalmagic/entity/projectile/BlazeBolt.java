@@ -81,7 +81,7 @@ public class BlazeBolt extends AbstractHurtingProjectile implements IAnimatable 
 
     @Override
     protected ParticleOptions getTrailParticle() {
-        return KnocksParticles.SNOWFLAKE.get();
+        return ParticleTypes.FLAME;
     }
 
     @Override

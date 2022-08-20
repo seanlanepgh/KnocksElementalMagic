@@ -15,7 +15,7 @@ public class BlazeBoltModel extends AnimatedGeoModel<BlazeBolt> {
 
     @Override
     public ResourceLocation getTextureResource(BlazeBolt object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blizz_bolt.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/projectiles/blaze_bolt.png");
 
     }
     @Override

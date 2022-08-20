@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.elemental_bolt.idle": {
+		"animation.elemental_blast.idle": {
 			"loop": true,
 			"animation_length": 3,
 			"bones": {
