@@ -55,7 +55,9 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<QuakeBolt>> QUAKE_BOLT = ENTITY_TYPES.register("quake_bolt",
             () ->  EntityType.Builder.<QuakeBolt>of(QuakeBolt::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_bolt").toString()));
-
+    public static final RegistryObject<EntityType<QuakeKnightEntity>> QUAKE_KNIGHT = ENTITY_TYPES.register("quake_knight",
+            () -> EntityType.Builder.of(QuakeKnightEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
+                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_knight").toString()));
     public static final RegistryObject<EntityType<QuakeStrike>> QUAKE_STRIKE = ENTITY_TYPES.register("quake_strike",
             () ->  EntityType.Builder.<QuakeStrike>of(QuakeStrike::new, MobCategory.MISC).sized(0.3125F, 0.3125F)
                     .clientTrackingRange(4).updateInterval(10).build(new ResourceLocation(KnocksElementalMagic.MODID, "quake_strike").toString()));

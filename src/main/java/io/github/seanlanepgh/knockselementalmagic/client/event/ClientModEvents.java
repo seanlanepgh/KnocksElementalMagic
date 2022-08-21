@@ -14,8 +14,7 @@ import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
-import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlazeKnightEntity;
-import io.github.seanlanepgh.knockselementalmagic.entity.elemental.BlizzEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
@@ -44,14 +43,14 @@ public final class ClientModEvents {
 		event.put(KnocksEntityTypes.BLIZZ.get(), BlizzEntity.setAttributes());
 		event.put(KnocksEntityTypes.QUAKE.get(), BlizzEntity.setAttributes());
 		event.put(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightEntity.setAttributes());
-		event.put(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlazeKnightEntity.setAttributes());
+		event.put(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlizzKnightEntity.setAttributes());
+		event.put(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightEntity.setAttributes());
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
 	@SubscribeEvent 
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ.get(), BlizzRenderer::new);
-		event.registerEntityRenderer(KnocksEntityTypes.QUAKE.get(), QuakeRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BOLT.get(), BlizzBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BOLT.get(), BlazeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BLAST.get(), BlizzBlastRenderer::new);
@@ -64,9 +63,10 @@ public final class ClientModEvents {
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BOLT.get(), TornadoBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_BLAST.get(), TornadoBlastRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_STRIKE.get(), TornadoStrikeRenderer::new);
-
+		event.registerEntityRenderer(KnocksEntityTypes.QUAKE.get(), QuakeRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BOLT.get(), QuakeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_BLAST.get(), QuakeBlastRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_STRIKE.get(), QuakeStrikeRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.TORNADO.get(), ElementalRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.SMALL_EARTHBALL.get(), SmallEarthBallRenderer::new);

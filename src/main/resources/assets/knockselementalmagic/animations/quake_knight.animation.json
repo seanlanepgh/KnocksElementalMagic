@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.knocksvanilla:blaze_knight.walk": {
+		"animation.quake_knight.walk": {
 			"loop": true,
 			"animation_length": 4,
 			"bones": {
@@ -152,7 +152,7 @@
 				}
 			}
 		},
-		"animation.knocksvanilla:blaze_knight.idle": {
+		"animation.quake_knight.idle": {
 			"loop": true,
 			"animation_length": 4,
 			"bones": {
@@ -303,7 +303,7 @@
 				}
 			}
 		},
-		"animation.knocksvanilla:blaze_knight.attack": {
+		"animation.quake_knight.attack": {
 			"loop": true,
 			"animation_length": 4,
 			"bones": {
