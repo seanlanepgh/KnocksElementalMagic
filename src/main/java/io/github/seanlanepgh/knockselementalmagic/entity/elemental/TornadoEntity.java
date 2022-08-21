@@ -1,6 +1,5 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
 
-import net.minecraft.core.particles.*;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -28,8 +26,6 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-
-import java.util.EnumSet;
 
 
 import io.github.seanlanepgh.knockselementalmagic.core.*;
@@ -37,35 +33,8 @@ import io.github.seanlanepgh.knockselementalmagic.entity.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.ai.goal.RangedAttackGoal;
 import io.github.seanlanepgh.knockselementalmagic.entity.attack.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.navigation.*;
 import net.minecraft.world.entity.monster.*;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.*;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.IAnimationTickable;
-import software.bernie.geckolib3.core.PlayState;
-import software.bernie.geckolib3.core.builder.AnimationBuilder;
-import software.bernie.geckolib3.core.controller.AnimationController;
-import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-
-
-import java.util.EnumSet;
 
 public class TornadoEntity extends KnocksEntity implements IAnimatable, IAnimationTickable, Enemy {
     private float allowedHeightOffset = 0.5F;
@@ -195,7 +164,7 @@ public class TornadoEntity extends KnocksEntity implements IAnimatable, IAnimati
 
         @Override
         public Projectile getProjectile(Level world, double d2, double d3, double d4) {
-            return new TornadoBolt(world, this.parentEntity, d2, d3, d4, damage);
+            return new TornadoBolt(world, this.parentEntity, d2);
         }
     }
 }

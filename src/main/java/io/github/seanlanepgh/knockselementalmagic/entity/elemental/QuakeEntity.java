@@ -195,7 +195,7 @@ public class QuakeEntity extends KnocksEntity implements IAnimatable, IAnimation
 
             @Override
             public Projectile getProjectile(Level world, double d2, double d3, double d4) {
-                return new QuakeBolt(world, this.parentEntity, d2, d3, d4, damage);
+                return new QuakeStrike(world, this.parentEntity, d2, d3, d4, damage);
             }
         }
 }

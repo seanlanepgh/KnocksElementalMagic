@@ -51,13 +51,11 @@ public class QuakeBlast extends AbstractHurtingProjectile implements IAnimatable
 
     public QuakeBlast(Level worldIn, LivingEntity shooter, double accelX, double accelY, double accelZ,
                       float directHitDamage) {
-        super(KnocksEntityTypes.BLIZZ_BLAST.get(), shooter, accelX, accelY, accelZ, worldIn);
+        super(KnocksEntityTypes.QUAKE_BLAST.get(), shooter, accelX, accelY, accelZ, worldIn);
         this.directHitDamage = directHitDamage;
     }
 
-    public QuakeBlast(Level worldIn, double x, double y, double z, double accelX, double accelY, double accelZ) {
-        super(KnocksEntityTypes.BLIZZ_BLAST.get(), x, y, z, accelX, accelY, accelZ, worldIn);
-    }
+
 
     @Override
     public void shoot(double x, double y, double z, float velocity, float inaccuracy) {
