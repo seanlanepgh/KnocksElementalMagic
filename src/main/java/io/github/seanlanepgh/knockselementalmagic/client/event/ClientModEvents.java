@@ -11,11 +11,16 @@ import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.wizard.CustomWizardRenderer;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.EarthWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.IceWizardEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.client.renderer.entity.BlazeRenderer;
@@ -45,6 +50,10 @@ public final class ClientModEvents {
 		event.put(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightEntity.setAttributes());
 		event.put(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlizzKnightEntity.setAttributes());
 		event.put(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightEntity.setAttributes());
+		event.put(KnocksEntityTypes.FIRE_WIZARD.get(), FireWizardEntity.setAttributes());
+		event.put(KnocksEntityTypes.AIR_WIZARD.get(), AirWizardEntity.setAttributes());
+		event.put(KnocksEntityTypes.ICE_WIZARD.get(), IceWizardEntity.setAttributes());
+		event.put(KnocksEntityTypes.EARTH_WIZARD.get(), EarthWizardEntity.setAttributes());
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
@@ -80,10 +89,10 @@ public final class ClientModEvents {
 //		event.registerEntityRenderer(KnocksEntityTypes.ICE_GOLEM.get(), FireGolemRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.AIR_GOLEM.get(), FireGolemRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.EARTH_GOLEM.get(), FireGolemRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.FIRE_WIZARD.get(), CustomWizardRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.ICE_WIZARD.get(), CustomWizardRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.AIR_WIZARD.get(), CustomWizardRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.EARTH_WIZARD.get(), CustomWizardRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.FIRE_WIZARD.get(), CustomWizardRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.ICE_WIZARD.get(), CustomWizardRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.AIR_WIZARD.get(), CustomWizardRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.EARTH_WIZARD.get(), CustomWizardRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.NATURE_WIZARD.get(), CustomWizardRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.VOID_WIZARD.get(), CustomWizardRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.GOLEM_SPIKE_ENTITY.get(),GolemSpikeRenderer::new );

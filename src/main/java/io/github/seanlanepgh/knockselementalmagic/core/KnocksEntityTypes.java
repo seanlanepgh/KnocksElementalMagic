@@ -4,6 +4,10 @@ package io.github.seanlanepgh.knockselementalmagic.core;
 import io.github.seanlanepgh.knockselementalmagic.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.EarthWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.wizard.IceWizardEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -94,18 +98,18 @@ public class KnocksEntityTypes {
 //            () -> EntityType.Builder.of(EarthGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
 //                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "earth_golem" ).toString() ) );
 
-//    public static RegistryObject <EntityType <FireWizardEntity>> FIRE_WIZARD = ENTITY_TYPES.register( "fire_wizard" ,
-//            () -> EntityType.Builder.of( FireWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
-//                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "fire_wizard" ).toString() ) );
-//    public static RegistryObject <EntityType <IceWizardEntity>> ICE_WIZARD = ENTITY_TYPES.register( "ice_wizard" ,
-//            () -> EntityType.Builder.of( IceWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
-//                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "ice_wizard" ).toString() ) );
-//    public static RegistryObject <EntityType <EarthWizardEntity>> EARTH_WIZARD = ENTITY_TYPES.register( "earth_wizard" ,
-//            () -> EntityType.Builder.of( EarthWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
-//                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "earth_wizard" ).toString()));
-//    public static RegistryObject <EntityType <AirWizardEntity>> AIR_WIZARD = ENTITY_TYPES.register( "air_wizard" ,
-//            () -> EntityType.Builder.of( AirWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
-//                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "air_wizard" ).toString() ) );
+    public static RegistryObject <EntityType <FireWizardEntity>> FIRE_WIZARD = ENTITY_TYPES.register( "fire_wizard" ,
+            () -> EntityType.Builder.of( FireWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
+                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "fire_wizard" ).toString() ) );
+    public static RegistryObject <EntityType <IceWizardEntity>> ICE_WIZARD = ENTITY_TYPES.register( "ice_wizard" ,
+            () -> EntityType.Builder.of( IceWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
+                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "ice_wizard" ).toString() ) );
+    public static RegistryObject <EntityType <EarthWizardEntity>> EARTH_WIZARD = ENTITY_TYPES.register( "earth_wizard" ,
+            () -> EntityType.Builder.of( EarthWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
+                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "earth_wizard" ).toString()));
+    public static RegistryObject <EntityType <AirWizardEntity>> AIR_WIZARD = ENTITY_TYPES.register( "air_wizard" ,
+            () -> EntityType.Builder.of( AirWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
+                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "air_wizard" ).toString() ) );
 //
 //    public static RegistryObject <EntityType <NatureWizardEntity>> NATURE_WIZARD = ENTITY_TYPES.register( "nature_wizard" ,
 //            () -> EntityType.Builder.of(NatureWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
