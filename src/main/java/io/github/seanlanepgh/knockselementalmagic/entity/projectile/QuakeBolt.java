@@ -47,10 +47,10 @@ public class QuakeBolt extends AbstractArrow implements IAnimatable {
         this.shooter = owner;
     }
 
-    public QuakeBolt(Level world, LivingEntity owner, double d2, double d3, double d4, float damage) {
+    public QuakeBolt(Level world, LivingEntity owner, double damage) {
         super(KnocksEntityTypes.QUAKE_BOLT.get(), owner, world);
         this.shooter = owner;
-        this.projectiledamage = damage;
+        this.projectiledamage = (float) damage;
     }
 
     private AnimationFactory factory = new AnimationFactory(this);

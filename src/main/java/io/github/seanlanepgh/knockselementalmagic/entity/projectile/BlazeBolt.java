@@ -10,13 +10,11 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.*;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.*;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
 import net.minecraftforge.network.*;
@@ -27,8 +25,6 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-
-import java.util.List;
 
 public class BlazeBolt extends AbstractArrow implements IAnimatable {
 
@@ -46,15 +42,15 @@ public class BlazeBolt extends AbstractArrow implements IAnimatable {
         super(type, world);
     }
 
-    public BlazeBolt(Level world, LivingEntity owner) {
+    public BlazeBolt(Level world, double p_32673_, double v, double p_32674_, float p_32677_, int p_32678_, LivingEntity owner) {
         super(KnocksEntityTypes.BLAZE_BOLT.get(), owner, world);
         this.shooter = owner;
     }
 
-    public BlazeBolt(Level world, LivingEntity owner, float damage) {
+    public BlazeBolt(Level world, LivingEntity owner, double damage) {
         super(KnocksEntityTypes.BLAZE_BOLT.get(), owner, world);
         this.shooter = owner;
-        this.projectiledamage = damage;
+        this.projectiledamage = (float) damage;
     }
 
     private AnimationFactory factory = new AnimationFactory(this);

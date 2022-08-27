@@ -48,6 +48,11 @@ public class BlazeBlast extends AbstractArrow implements IAnimatable {
         super(KnocksEntityTypes.BLAZE_BLAST.get(), owner, world);
         this.shooter = owner;
     }
+    public BlazeBlast(Level world, LivingEntity owner, double damage) {
+        super(KnocksEntityTypes.BLAZE_BLAST.get(), owner, world);
+        this.shooter = owner;
+        this.projectiledamage = (float) damage;
+    }
 
     public BlazeBlast(Level world, LivingEntity owner, double d2, double d3, double d4, float damage) {
         super(KnocksEntityTypes.BLAZE_BLAST.get(), owner, world);
