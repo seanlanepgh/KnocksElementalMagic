@@ -2,7 +2,7 @@ package io.github.seanlanepgh.knockselementalmagic.core;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksArmorMaterial;
-import io.github.seanlanepgh.knockselementalmagic.items.*;
+import io.github.seanlanepgh.knockselementalmagic.core.items.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -59,9 +59,9 @@ public class KnocksItems {
         public static final RegistryObject<Item> SOUL_CORE = ITEMS.register("soul_core", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> VOID_CORE = ITEMS.register("void_core", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 
-        public static final RegistryObject<Item> ICE_CHARGE = ITEMS.register("ice_charge", () -> new IceChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> EARTH_CHARGE = ITEMS.register("earth_charge", () -> new EarthChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> AIR_CHARGE = ITEMS.register("air_charge", () -> new AirChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+//        public static final RegistryObject<Item> ICE_CHARGE = ITEMS.register("ice_charge", () -> new IceChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+//        public static final RegistryObject<Item> EARTH_CHARGE = ITEMS.register("earth_charge", () -> new EarthChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+//        public static final RegistryObject<Item> AIR_CHARGE = ITEMS.register("air_charge", () -> new AirChargeItem(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 
         public static final RegistryObject<Item> BLIZZ_POWDER = ITEMS.register("blizz_powder", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> QUAKE_POWDER = ITEMS.register("quake_powder", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
@@ -215,49 +215,49 @@ public class KnocksItems {
 //		 public static final RegistryObject<Item> SOUL_WAND = ITEMS.register("soul_wand", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 //		 public static final RegistryObject<Item> VOID_WAND  = ITEMS.register("void_wand", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 //
-        public static final RegistryObject<Item> NOVICE_MAGIC_STAFF = ITEMS.register("novice_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_FIRE_STAFF  = ITEMS.register("novice_fire_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_ICE_STAFF  = ITEMS.register("novice_ice_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_EARTH_STAFF  = ITEMS.register("novice_earth_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_AIR_STAFF  = ITEMS.register("novice_air_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_NATURE_STAFF  = ITEMS.register("nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item> NOVICE_MAGIC_STAFF = ITEMS.register("novice_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item> NOVICE_FIRE_STAFF  = ITEMS.register("novice_fire_staff", () -> new NoviceFireStaff(defaultBuilder().durability(99).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item> NOVICE_ICE_STAFF  = ITEMS.register("novice_ice_staff", () -> new NoviceIceStaff(defaultBuilder().durability(99).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item> NOVICE_EARTH_STAFF  = ITEMS.register("novice_earth_staff", () -> new NoviceEarthStaff(defaultBuilder().durability(99).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item> NOVICE_AIR_STAFF  = ITEMS.register("novice_air_staff", () -> new NoviceAirStaff(defaultBuilder().durability(99).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item> NOVICE_NATURE_STAFF  = ITEMS.register("nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         // public static final RegistryObject<Item> SOUL_STAFF = ITEMS.register("soul_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> NOVICE_VOID_STAFF  = ITEMS.register("novice_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item> NOVICE_VOID_STAFF  = ITEMS.register("novice_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         //Novice
 
         //Apprentice
 //        public static final RegistryObject<Item> APPRENTICE_MAGIC_STAFF = ITEMS.register("apprentice_magic_staff", () -> new ApprenticeFireStaffItem(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
-//        public static final RegistryObject<Item> APPRENTICE_FIRE_STAFF  = ITEMS.register("apprentice_fire_staff", () -> new ApprenticeFireStaffItem(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
-//        public static final RegistryObject<Item> APPRENTICE_ICE_STAFF  = ITEMS.register("apprentice_ice_staff", () -> new ApprenticeIceStaffItem(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
-        public static final RegistryObject<Item> APPRENTICE_EARTH_STAFF  = ITEMS.register("apprentice_earth_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> APPRENTICE_AIR_STAFF  = ITEMS.register("apprentice_air_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> APPRENTICE_NATURE_STAFF  = ITEMS.register("apprentice_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item> APPRENTICE_FIRE_STAFF  = ITEMS.register("apprentice_fire_staff", () -> new ApprenticeFireStaff(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
+        public static final RegistryObject<Item> APPRENTICE_ICE_STAFF  = ITEMS.register("apprentice_ice_staff", () -> new ApprenticeIceStaff(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
+        public static final RegistryObject<Item> APPRENTICE_EARTH_STAFF  = ITEMS.register("apprentice_earth_staff", () -> new ApprenticeEarthStaff(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
+        public static final RegistryObject<Item> APPRENTICE_AIR_STAFF  = ITEMS.register("apprentice_air_staff", () -> new ApprenticeAirStaff(defaultBuilder().durability(99).rarity(Rarity.UNCOMMON)));
+        //public static final RegistryObject<Item> APPRENTICE_NATURE_STAFF  = ITEMS.register("apprentice_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         // public static final RegistryObject<Item> SOUL_STAFF = ITEMS.register("soul_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item> APPRENTICE_VOID_STAFF  = ITEMS.register("apprentice_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item> APPRENTICE_VOID_STAFF  = ITEMS.register("apprentice_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 
         //Journeyman
 
         //Expert
-        public static final RegistryObject<Item> EXPERT_MAGIC_STAFF = ITEMS.register("expert_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_FIRE_STAFF  = ITEMS.register("expert_fire_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_ICE_STAFF  = ITEMS.register("expert_ice_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_EARTH_STAFF  = ITEMS.register("expert_earth_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_AIR_STAFF  = ITEMS.register("expert_air_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_NATURE_STAFF  = ITEMS.register("expert_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item> EXPERT_MAGIC_STAFF = ITEMS.register("expert_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        public static final RegistryObject<Item>  EXPERT_FIRE_STAFF  = ITEMS.register("expert_fire_staff", () -> new ExpertFireStaff(defaultBuilder().durability(99).rarity(Rarity.RARE)));
+        public static final RegistryObject<Item>  EXPERT_ICE_STAFF  = ITEMS.register("expert_ice_staff", () -> new ExpertIceStaff(defaultBuilder().durability(99).rarity(Rarity.RARE)));
+        public static final RegistryObject<Item>  EXPERT_EARTH_STAFF  = ITEMS.register("expert_earth_staff", () -> new ExpertEarthStaff(defaultBuilder().durability(99).rarity(Rarity.RARE)));
+        public static final RegistryObject<Item>  EXPERT_AIR_STAFF  = ITEMS.register("expert_air_staff", () -> new ExpertAirStaff(defaultBuilder().durability(99).rarity(Rarity.RARE)));
+       // public static final RegistryObject<Item>  EXPERT_NATURE_STAFF  = ITEMS.register("expert_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         // public static final RegistryObject<Item> SOUL_STAFF = ITEMS.register("soul_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  EXPERT_VOID_STAFF  = ITEMS.register("expert_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+        //public static final RegistryObject<Item>  EXPERT_VOID_STAFF  = ITEMS.register("expert_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 
         //Adept
 
         //Master
-        public static final RegistryObject<Item> MASTER_MAGIC_STAFF = ITEMS.register("master_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+       // public static final RegistryObject<Item> MASTER_MAGIC_STAFF = ITEMS.register("master_magic_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item>  MASTER_FIRE_STAFF  = ITEMS.register("master_fire_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item>  MASTER_ICE_STAFF  = ITEMS.register("master_ice_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item>  MASTER_EARTH_STAFF  = ITEMS.register("master_earth_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item>  MASTER_AIR_STAFF  = ITEMS.register("master_air_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  MASTER_NATURE_STAFF  = ITEMS.register("master_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+       // public static final RegistryObject<Item>  MASTER_NATURE_STAFF  = ITEMS.register("master_nature_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         // public static final RegistryObject<Item> SOUL_STAFF = ITEMS.register("soul_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-        public static final RegistryObject<Item>  MASTER_VOID_STAFF  = ITEMS.register("master_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
+       // public static final RegistryObject<Item>  MASTER_VOID_STAFF  = ITEMS.register("master_void_staff", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
 
         //Grandmaster
 
