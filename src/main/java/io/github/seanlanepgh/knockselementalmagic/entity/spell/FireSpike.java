@@ -1,8 +1,6 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.spell;
 
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
-import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
-import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
