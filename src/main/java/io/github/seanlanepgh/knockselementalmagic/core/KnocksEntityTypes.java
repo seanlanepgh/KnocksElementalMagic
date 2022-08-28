@@ -4,6 +4,7 @@ package io.github.seanlanepgh.knockselementalmagic.core;
 import io.github.seanlanepgh.knockselementalmagic.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.EarthWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity;
@@ -97,7 +98,8 @@ public class KnocksEntityTypes {
 //    public static RegistryObject <EntityType <EarthGolemEntity>> EARTH_GOLEM = ENTITY_TYPES.register( "earth_golem" ,
 //            () -> EntityType.Builder.of(EarthGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
 //                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "earth_golem" ).toString() ) );
-
+public static RegistryObject<EntityType<FireSpike>> FIRE_SPIKE = ENTITY_TYPES.register( "fire_spike",
+        () -> EntityType.Builder.<FireSpike>of(FireSpike::new, MobCategory.MISC).sized(0.5F, 0.8F).clientTrackingRange(6).updateInterval(2).build( new ResourceLocation(KnocksElementalMagic.MODID , "fire_spike" ).toString()));
     public static RegistryObject <EntityType <FireWizardEntity>> FIRE_WIZARD = ENTITY_TYPES.register( "fire_wizard" ,
             () -> EntityType.Builder.of( FireWizardEntity::new , MobCategory.MONSTER ).sized(0.6F, 1.95F).clientTrackingRange(8)
                     .build( new ResourceLocation(KnocksElementalMagic.MODID , "fire_wizard" ).toString() ) );
