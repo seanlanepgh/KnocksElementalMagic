@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import io.github.seanlanepgh.knockselementalmagic.entity.attack.AttackSound;
+import io.github.seanlanepgh.knockselementalmagic.entity.projectile.BlazeBolt;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
@@ -29,7 +31,7 @@ import net.minecraft.world.entity.monster.SpellcasterIllager;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.EvokerFangs;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.Level;
@@ -37,6 +39,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class AirWizardEntity extends SpellcasterIllager {
+    public float damage = 1;
     @Nullable
     private Sheep wololoTarget;
 
@@ -50,7 +53,7 @@ public class AirWizardEntity extends SpellcasterIllager {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new AirWizardEntity.AirWizardEntityCastingSpellGoal());
         this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 0.6D, 1.0D));
-        this.goalSelector.addGoal(4, new AirWizardEntity.AirWizardEntitySummonSpellGoal());
+        this.goalSelector.addGoal(4, new AirWizardEntity.AirWizardEntityBoltSpellGoal());
         this.goalSelector.addGoal(5, new AirWizardEntity.AirWizardEntityAttackSpellGoal());
         this.goalSelector.addGoal(6, new AirWizardEntity.AirWizardEntityWololoSpellGoal());
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6D));
@@ -63,7 +66,7 @@ public class AirWizardEntity extends SpellcasterIllager {
     }
 
     public static AttributeSupplier setAttributes() {
-        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.FOLLOW_RANGE, 12.0D).add(Attributes.MAX_HEALTH, 24.0D).build();
+        return Monster.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.5D).add(Attributes.FOLLOW_RANGE, 12.0D).add(Attributes.MAX_HEALTH, 100.0D).build();
     }
 
     protected void defineSynchedData() {
@@ -100,8 +103,8 @@ public class AirWizardEntity extends SpellcasterIllager {
         } else if (super.isAlliedTo(pEntity)) {
             return true;
         } else if (pEntity instanceof Vex) {
-            return this.isAlliedTo(((Vex)pEntity).getOwner());
-        } else if (pEntity instanceof LivingEntity && ((LivingEntity)pEntity).getMobType() == MobType.ILLAGER) {
+            return this.isAlliedTo(((Vex) pEntity).getOwner());
+        } else if (pEntity instanceof LivingEntity && ((LivingEntity) pEntity).getMobType() == MobType.ILLAGER) {
             return this.getTeam() == null && pEntity.getTeam() == null;
         } else {
             return false;
@@ -136,35 +139,80 @@ public class AirWizardEntity extends SpellcasterIllager {
     public void applyRaidBuffs(int p_32632_, boolean p_32633_) {
     }
 
+    class AirWizardEntityBoltSpellGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
+        protected int getCastingTime() {
+            return 41;
+        }
+
+        protected int getCastingInterval() {
+            return 121;
+        }
+
+        @org.jetbrains.annotations.Nullable
+
+        protected SoundEvent getSpellPrepareSound() {
+            return SoundEvents.EVOKER_PREPARE_ATTACK;
+        }
+
+        protected SpellcasterIllager.IllagerSpell getSpell() {
+            return SpellcasterIllager.IllagerSpell.FANGS;
+        }
+
+        protected void performSpellCasting() {
+
+            BlazeBolt abstractarrowentity = createArrow(AirWizardEntity.this.level, AirWizardEntity.this);
+            abstractarrowentity.shootFromRotation(AirWizardEntity.this, AirWizardEntity.this.getXRot(), AirWizardEntity.this.getYRot(),
+                    0.0F, 0.25F * 3.0F, 1.0F);
+            abstractarrowentity.isNoGravity();
+            AirWizardEntity.this.level.addFreshEntity(abstractarrowentity);
+        }
+        public BlazeBolt createArrow(Level level, LivingEntity shooter) {
+            //float j = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
+            BlazeBolt arrowentity = new BlazeBolt(level, shooter,
+                    (2.0F));
+            return arrowentity;
+        }
+
+
+
+        public AttackSound getDefaultAttackSound() {
+            return new AttackSound(SoundEvents.BLAZE_SHOOT, 0.7F, 1);
+        }
+
+
+        public Projectile getProjectile(Level world, double d2, double d3, double d4) {
+            return new BlazeBolt(world, AirWizardEntity.this, d2);
+        }
+    }
     class AirWizardEntityAttackSpellGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
         protected int getCastingTime() {
             return 40;
         }
 
         protected int getCastingInterval() {
-            return 100;
+            return 200;
         }
 
         protected void performSpellCasting() {
             LivingEntity livingentity = AirWizardEntity.this.getTarget();
             double d0 = Math.min(livingentity.getY(), AirWizardEntity.this.getY());
             double d1 = Math.max(livingentity.getY(), AirWizardEntity.this.getY()) + 1.0D;
-            float f = (float)Mth.atan2(livingentity.getZ() - AirWizardEntity.this.getZ(), livingentity.getX() - AirWizardEntity.this.getX());
+            float f = (float) Mth.atan2(livingentity.getZ() - AirWizardEntity.this.getZ(), livingentity.getX() - AirWizardEntity.this.getX());
             if (AirWizardEntity.this.distanceToSqr(livingentity) < 9.0D) {
-                for(int i = 0; i < 5; ++i) {
-                    float f1 = f + (float)i * (float)Math.PI * 0.4F;
-                    this.createSpellEntity(AirWizardEntity.this.getX() + (double)Mth.cos(f1) * 1.5D, AirWizardEntity.this.getZ() + (double)Mth.sin(f1) * 1.5D, d0, d1, f1, 0);
+                for (int i = 0; i < 5; ++i) {
+                    float f1 = f + (float) i * (float) Math.PI * 0.4F;
+                    this.createSpellEntity(AirWizardEntity.this.getX() + (double) Mth.cos(f1) * 1.5D, AirWizardEntity.this.getZ() + (double) Mth.sin(f1) * 1.5D, d0, d1, f1, 0);
                 }
 
-                for(int k = 0; k < 8; ++k) {
-                    float f2 = f + (float)k * (float)Math.PI * 2.0F / 8.0F + 1.2566371F;
-                    this.createSpellEntity(AirWizardEntity.this.getX() + (double)Mth.cos(f2) * 2.5D, AirWizardEntity.this.getZ() + (double)Mth.sin(f2) * 2.5D, d0, d1, f2, 3);
+                for (int k = 0; k < 8; ++k) {
+                    float f2 = f + (float) k * (float) Math.PI * 2.0F / 8.0F + 1.2566371F;
+                    this.createSpellEntity(AirWizardEntity.this.getX() + (double) Mth.cos(f2) * 2.5D, AirWizardEntity.this.getZ() + (double) Mth.sin(f2) * 2.5D, d0, d1, f2, 3);
                 }
             } else {
-                for(int l = 0; l < 16; ++l) {
-                    double d2 = 1.25D * (double)(l + 1);
+                for (int l = 0; l < 16; ++l) {
+                    double d2 = 1.25D * (double) (l + 1);
                     int j = 1 * l;
-                    this.createSpellEntity(AirWizardEntity.this.getX() + (double)Mth.cos(f) * d2, AirWizardEntity.this.getZ() + (double)Mth.sin(f) * d2, d0, d1, f, j);
+                    this.createSpellEntity(AirWizardEntity.this.getX() + (double) Mth.cos(f) * d2, AirWizardEntity.this.getZ() + (double) Mth.sin(f) * d2, d0, d1, f, j);
                 }
             }
 
@@ -192,10 +240,10 @@ public class AirWizardEntity extends SpellcasterIllager {
                 }
 
                 blockpos = blockpos.below();
-            } while(blockpos.getY() >= Mth.floor(p_32675_) - 1);
+            } while (blockpos.getY() >= Mth.floor(p_32675_) - 1);
 
             if (flag) {
-                AirWizardEntity.this.level.addFreshEntity(new EvokerFangs(AirWizardEntity.this.level, p_32673_, (double)blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, AirWizardEntity.this));
+                AirWizardEntity.this.level.addFreshEntity(new FireSpike(AirWizardEntity.this.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, AirWizardEntity.this));
             }
 
         }
@@ -215,66 +263,17 @@ public class AirWizardEntity extends SpellcasterIllager {
          */
         public void tick() {
             if (AirWizardEntity.this.getTarget() != null) {
-                AirWizardEntity.this.getLookControl().setLookAt(AirWizardEntity.this.getTarget(), (float)AirWizardEntity.this.getMaxHeadYRot(), (float)AirWizardEntity.this.getMaxHeadXRot());
+                AirWizardEntity.this.getLookControl().setLookAt(AirWizardEntity.this.getTarget(), (float) AirWizardEntity.this.getMaxHeadYRot(), (float) AirWizardEntity.this.getMaxHeadXRot());
             } else if (AirWizardEntity.this.getWololoTarget() != null) {
-                AirWizardEntity.this.getLookControl().setLookAt(AirWizardEntity.this.getWololoTarget(), (float)AirWizardEntity.this.getMaxHeadYRot(), (float)AirWizardEntity.this.getMaxHeadXRot());
+                AirWizardEntity.this.getLookControl().setLookAt(AirWizardEntity.this.getWololoTarget(), (float) AirWizardEntity.this.getMaxHeadYRot(), (float) AirWizardEntity.this.getMaxHeadXRot());
             }
 
-        }
-    }
-
-    class AirWizardEntitySummonSpellGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
-        private final TargetingConditions vexCountTargeting = TargetingConditions.forNonCombat().range(16.0D).ignoreLineOfSight().ignoreInvisibilityTesting();
-
-        /**
-         * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
-         * method as well.
-         */
-        public boolean canUse() {
-            if (!super.canUse()) {
-                return false;
-            } else {
-                int i = AirWizardEntity.this.level.getNearbyEntities(Vex.class, this.vexCountTargeting, AirWizardEntity.this, AirWizardEntity.this.getBoundingBox().inflate(16.0D)).size();
-                return AirWizardEntity.this.random.nextInt(8) + 1 > i;
-            }
-        }
-
-        protected int getCastingTime() {
-            return 100;
-        }
-
-        protected int getCastingInterval() {
-            return 340;
-        }
-
-        protected void performSpellCasting() {
-            ServerLevel serverlevel = (ServerLevel)AirWizardEntity.this.level;
-
-            for(int i = 0; i < 3; ++i) {
-                BlockPos blockpos = AirWizardEntity.this.blockPosition().offset(-2 + AirWizardEntity.this.random.nextInt(5), 1, -2 + AirWizardEntity.this.random.nextInt(5));
-                Vex vex = EntityType.VEX.create(AirWizardEntity.this.level);
-                vex.moveTo(blockpos, 0.0F, 0.0F);
-                vex.finalizeSpawn(serverlevel, AirWizardEntity.this.level.getCurrentDifficultyAt(blockpos), MobSpawnType.MOB_SUMMONED, (SpawnGroupData)null, (CompoundTag)null);
-                vex.setOwner(AirWizardEntity.this);
-                vex.setBoundOrigin(blockpos);
-                vex.setLimitedLife(20 * (30 + AirWizardEntity.this.random.nextInt(90)));
-                serverlevel.addFreshEntityWithPassengers(vex);
-            }
-
-        }
-
-        protected SoundEvent getSpellPrepareSound() {
-            return SoundEvents.EVOKER_PREPARE_SUMMON;
-        }
-
-        protected SpellcasterIllager.IllagerSpell getSpell() {
-            return SpellcasterIllager.IllagerSpell.SUMMON_VEX;
         }
     }
 
     public class AirWizardEntityWololoSpellGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
         private final TargetingConditions wololoTargeting = TargetingConditions.forNonCombat().range(16.0D).selector((p_32710_) -> {
-            return ((Sheep)p_32710_).getColor() == DyeColor.BLUE;
+            return ((Sheep) p_32710_).getColor() == DyeColor.BLUE;
         });
 
         /**
@@ -313,7 +312,7 @@ public class AirWizardEntity extends SpellcasterIllager {
          */
         public void stop() {
             super.stop();
-            AirWizardEntity.this.setWololoTarget((Sheep)null);
+            AirWizardEntity.this.setWololoTarget((Sheep) null);
         }
 
         protected void performSpellCasting() {
@@ -345,3 +344,4 @@ public class AirWizardEntity extends SpellcasterIllager {
         }
     }
 }
+
