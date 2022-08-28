@@ -31,23 +31,15 @@ import net.minecraft.world.entity.monster.SpellcasterIllager;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.EvokerFangs;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class FireWizardEntity extends SpellcasterIllager {
-
-	public double xOffSetModifier = 2;
-	public double entityHeightFraction = 0.5;
-	public double zOffSetModifier = 2;
 	public float damage = 1;
-	public double accuracy = 0.95;
 	@Nullable
 	private Sheep wololoTarget;
 
@@ -61,9 +53,6 @@ public class FireWizardEntity extends SpellcasterIllager {
 		this.goalSelector.addGoal(0, new FloatGoal(this));
 		this.goalSelector.addGoal(1, new FireWizardEntity.FireWizardEntityCastingSpellGoal());
 		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 0.6D, 1.0D));
-//		  this.goalSelector.addGoal(4, new RangedAttackGoal(this,
-//				   new FireWizardEntity.FireWizardBoltAttack(this).setProjectileOriginOffset(0.8, 0.5, 0.8)
-//						   .setDamage(2.0F),1.0F));
 		this.goalSelector.addGoal(4, new FireWizardEntity.FireWizardEntityBoltSpellGoal());
 		this.goalSelector.addGoal(5, new FireWizardEntity.FireWizardEntityAttackSpellGoal());
 		this.goalSelector.addGoal(6, new FireWizardEntity.FireWizardEntityWololoSpellGoal());
@@ -175,37 +164,7 @@ public class FireWizardEntity extends SpellcasterIllager {
 			abstractarrowentity.shootFromRotation(FireWizardEntity.this, FireWizardEntity.this.getXRot(), FireWizardEntity.this.getYRot(),
 					0.0F, 0.25F * 3.0F, 1.0F);
 			abstractarrowentity.isNoGravity();
-
-			//stack.hurtAndBreak(1, entityLiving, p -> p.broadcastBreakEvent(entityLiving.getUsedItemHand()));
 			FireWizardEntity.this.level.addFreshEntity(abstractarrowentity);
-//			Vec3 vector3d = FireWizardEntity.this.getViewVector(1.0F);
-//			double d2 = FireWizardEntity.this.getTarget().getX() - (FireWizardEntity.this.getTarget().getX() + vector3d.x * xOffSetModifier);
-//			double d3 = FireWizardEntity.this.getTarget().getY(0.5D) - (FireWizardEntity.this.getTarget().getY(entityHeightFraction));
-//			double d4 = FireWizardEntity.this.getTarget().getZ() - (FireWizardEntity.this.getTarget().getZ() + vector3d.z * zOffSetModifier);
-//			Projectile projectile = getProjectile(FireWizardEntity.this.level, rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
-//			projectile.setPos(FireWizardEntity.this.getX() + vector3d.x * xOffSetModifier,
-//					FireWizardEntity.this.getY(entityHeightFraction),
-//					FireWizardEntity.this.getZ() + vector3d.z * zOffSetModifier);
-//			FireWizardEntity.this.level.addFreshEntity(projectile);
-//			LivingEntity livingentity = FireWizardEntity.this.getTarget();
-//			double d0 = Math.min(livingentity.getY(), FireWizardEntity.this.getY());
-//			double d1 = Math.max(livingentity.getY(), FireWizardEntity.this.getY()) + 1.0D;
-//			float f = (float)Mth.atan2(livingentity.getZ() - FireWizardEntity.this.getZ(), livingentity.getX() - FireWizardEntity.this.getX());
-//			if (FireWizardEntity.this.distanceToSqr(livingentity) < 9.0D) {
-//				for(int i = 0; i < 5; ++i) {
-//					float f1 = f + (float)i * (float)Math.PI * 0.4F;
-//					this.createSpellEntity(FireWizardEntity.this.getX() + (double)Mth.cos(f1) * 1.5D, FireWizardEntity.this.getZ() + (double)Mth.sin(f1) * 1.5D, d0, d1, f1, 0);
-//				}
-//
-//				for(int k = 0; k < 8; ++k) {
-//					float f2 = f + (float)k * (float)Math.PI * 2.0F / 8.0F + 1.2566371F;
-//					this.createSpellEntity(FireWizardEntity.this.getX() + (double)Mth.cos(f2) * 2.5D, FireWizardEntity.this.getZ() + (double)Mth.sin(f2) * 2.5D, d0, d1, f2, 3);
-//				}
-//			} else {
-//				for(int l = 0; l < 16; ++l) {
-//			double d2 = 1.25D * (double)(l + 1);
-//				int j = 1 * l;
-//				this.createSpellEntity(FireWizardEntity.this.getX() + (double)Mth.cos(f) * d2, FireWizardEntity.this.getZ() + (double)Mth.sin(f) * d2, d0, d1, f, j);
 		}
 		public BlazeBolt createArrow(Level level, LivingEntity shooter) {
 			//float j = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
@@ -213,21 +172,7 @@ public class FireWizardEntity extends SpellcasterIllager {
 					(2.0F));
 			return arrowentity;
 		}
-//		public void shoot() {
-//			Vec3 vector3d = FireWizardEntity.this.getViewVector(1.0F);
-//			double d2 = FireWizardEntity.this.getTarget().getX() - (FireWizardEntity.this.getTarget().getX() + vector3d.x * xOffSetModifier);
-//			double d3 = FireWizardEntity.this.getTarget().getY(0.5D) - (FireWizardEntity.this.getTarget().getY(entityHeightFraction));
-//			double d4 = FireWizardEntity.this.getTarget().getZ() - (FireWizardEntity.this.getTarget().getZ() + vector3d.z * zOffSetModifier);
-//			Projectile projectile = getProjectile(FireWizardEntity.this.level, rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
-//			projectile.setPos(FireWizardEntity.this.getX() + vector3d.x * xOffSetModifier,
-//					FireWizardEntity.this.getY(entityHeightFraction),
-//					FireWizardEntity.this.getZ() + vector3d.z * zOffSetModifier);
-//			FireWizardEntity.this.level.addFreshEntity(projectile);
-////			if (sound == null)
-////				getDefaultAttackSound().play(this.parentEntity);
-////			else
-////				sound.play(this.parentEntity);
-//		}
+
 
 
 		public AttackSound getDefaultAttackSound() {
@@ -239,26 +184,6 @@ public class FireWizardEntity extends SpellcasterIllager {
 			return new BlazeBolt(world, FireWizardEntity.this, d2);
 		}
 	}
-
-	public double rollAccuracy(double directional) {
-		return directional + (1.0D - accuracy) * directional * FireWizardEntity.this.getRandom().nextGaussian();
-	}
-
-//		private void createSpellEntity(double p_32673_, double p_32674_, double p_32675_, double p_32676_, float p_32677_, int p_32678_) {
-//			Vec3 vector3d = FireWizardEntity.this.getViewVector(1.0F);
-//			double d2 = FireWizardEntity.this.getTarget().getX() - (FireWizardEntity.this.getTarget().getX() + vector3d.x * xOffSetModifier);
-//			double d3 = FireWizardEntity.this.getTarget().getY(0.5D) - (FireWizardEntity.this.getTarget().getY(entityHeightFraction));
-//			double d4 = FireWizardEntity.this.getTarget().getZ() - (FireWizardEntity.this.getTarget().getZ() + vector3d.z * zOffSetModifier);
-//			Projectile projectile = getProjectile(FireWizardEntity.this.level, rollAccuracy(d2), rollAccuracy(d3), rollAccuracy(d4));
-//			projectile.setPos(FireWizardEntity.this.getX() + vector3d.x * xOffSetModifier,
-//					FireWizardEntity.this.getY(entityHeightFraction),
-//					FireWizardEntity.this.getZ() + vector3d.z * zOffSetModifier);
-//			FireWizardEntity.this.level.addFreshEntity(projectile);
-////			}
-//
-//		}
-
-
 	class FireWizardEntityAttackSpellGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
 		protected int getCastingTime() {
 			return 40;

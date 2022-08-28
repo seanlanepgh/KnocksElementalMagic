@@ -2,6 +2,7 @@ package io.github.seanlanepgh.knockselementalmagic.entity.projectile;
 
 
 import io.github.seanlanepgh.knockselementalmagic.core.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.KnocksEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.*;
 import net.minecraft.nbt.*;
@@ -54,6 +55,12 @@ public class QuakeBolt extends AbstractArrow implements IAnimatable {
     }
 
     private AnimationFactory factory = new AnimationFactory(this);
+
+    public QuakeBolt(Level world, KnocksEntity parentEntity, double d2, double d3, double d4, float damage) {
+        super(KnocksEntityTypes.QUAKE_BOLT.get(), parentEntity, world);
+        this.shooter = parentEntity;
+        this.projectiledamage = damage;
+    }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.elemental_bolt.idle", true));

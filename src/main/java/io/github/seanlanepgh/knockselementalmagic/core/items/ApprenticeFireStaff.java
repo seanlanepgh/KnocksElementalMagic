@@ -77,8 +77,7 @@ public class ApprenticeFireStaff extends KnocksBaseItem {
     }
     public BlazeBolt createArrow(Level level, ItemStack stack, LivingEntity shooter) {
         float j = EnchantmentHelper.getTagEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
-        BlazeBolt arrowentity = new BlazeBolt(level, shooter,
-                d2, d3, d4, (2.0F + (j * 2.0F)));
+        BlazeBolt arrowentity = new BlazeBolt(level, shooter,(2.0F + (j * 2.0F)));
         return arrowentity;
     }
 
