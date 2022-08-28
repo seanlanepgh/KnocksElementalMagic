@@ -3,6 +3,7 @@ package io.github.seanlanepgh.knockselementalmagic.core;
 
 import io.github.seanlanepgh.knockselementalmagic.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.IceGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.spell.AirSpike;
 import io.github.seanlanepgh.knockselementalmagic.entity.spell.EarthSpike;
@@ -83,9 +84,9 @@ public class KnocksEntityTypes {
     //    public static RegistryObject <EntityType <FireGolemEntity>> FIRE_GOLEM = ENTITY_TYPES.register( "fire_golem" ,
 //            () -> EntityType.Builder.of( FireGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
 //                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "fire_golem" ).toString() ) );
-//    public static RegistryObject <EntityType <IceGolemEntity>> ICE_GOLEM = ENTITY_TYPES.register( "ice_golem" ,
-//            () -> EntityType.Builder.of( IceGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
-//                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "ice_golem" ).toString() ) );
+    public static RegistryObject <EntityType <IceGolemEntity>> ICE_GOLEM = ENTITY_TYPES.register( "ice_golem" ,
+            () -> EntityType.Builder.of( IceGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
+                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "ice_golem" ).toString() ) );
 //    public static RegistryObject <EntityType <AirGolemEntity>> AIR_GOLEM = ENTITY_TYPES.register( "air_golem" ,
 //            () -> EntityType.Builder.of( AirGolemEntity::new , MobCategory.MONSTER ).sized(1.4F, 2.7F)
 //                    .build( new ResourceLocation(KnocksElementalMagic.MODID , "air_golem" ).toString() ) );

@@ -10,6 +10,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.IceGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.AirSpikeRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.EarthSpikeRenderer;
@@ -59,6 +60,7 @@ public final class ClientModEvents {
 		event.put(KnocksEntityTypes.AIR_WIZARD.get(), AirWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.ICE_WIZARD.get(), IceWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.EARTH_WIZARD.get(), EarthWizardEntity.setAttributes());
+		event.put(KnocksEntityTypes.ICE_GOLEM.get(), EarthWizardEntity.setAttributes());
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
@@ -91,7 +93,7 @@ public final class ClientModEvents {
 //		event.registerEntityRenderer(KnocksEntityTypes.LARGE_EARTHBALL.get(), LargeEarthBallRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.LARGE_AIRBALL.get(), LargeAirBallRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.LARGE_ICEBALL.get(), LargeIceBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.ICE_GOLEM.get(), FireGolemRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.ICE_GOLEM.get(), IceGolemRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.AIR_GOLEM.get(), FireGolemRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.EARTH_GOLEM.get(), FireGolemRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.FIRE_SPIKE.get(), FireSpikeRenderer::new);
