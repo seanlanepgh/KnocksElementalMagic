@@ -30,7 +30,7 @@ public class FireSpike extends EvokerFangs  implements IAnimatable {
         public static final int ATTACK_TRIGGER_TICKS = 14;
         private int warmupDelayTicks;
         private boolean sentSpikeEvent;
-        private int lifeTicks = 34;
+        private int lifeTicks = 30;
         private boolean clientSideAttackStarted;
         @Nullable
         private LivingEntity owner;
@@ -107,7 +107,7 @@ public class FireSpike extends EvokerFangs  implements IAnimatable {
             if (this.level.isClientSide) {
                 if (this.clientSideAttackStarted) {
                     --this.lifeTicks;
-                    if (this.lifeTicks == 33) {
+                    if (this.lifeTicks == 30) {
                         for(int i = 0; i < 20; ++i) {
                             double d0 = this.getX() + (this.random.nextDouble() * 2.0D - 1.0D) * (double)this.getBbWidth() * 0.5D;
                             double d1 = this.getY() + 0.05D + this.random.nextDouble();
