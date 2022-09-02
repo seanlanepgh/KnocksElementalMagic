@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"walk": {
+		"animation.elemental_golem.walk": {
 			"loop": true,
 			"animation_length": 2.5,
 			"bones": {
@@ -164,7 +164,7 @@
 				}
 			}
 		},
-		"attack": {
+		"animation.elemental_golem.attack": {
 			"animation_length": 3,
 			"bones": {
 				"body": {
@@ -263,7 +263,7 @@
 				}
 			}
 		},
-		"rage": {
+		"animation.elemental_golem.rage": {
 			"animation_length": 3,
 			"bones": {
 				"body": {
@@ -471,7 +471,7 @@
 			"sound_effects": {},
 			"particle_effects": {}
 		},
-		"idle": {
+		"animation.elemental_golem.idle": {
 			"loop": true,
 			"animation_length": 3,
 			"bones": {
@@ -490,7 +490,7 @@
 				}
 			}
 		},
-		"smash_attack": {
+		"animation.elemental_golem.smash_attack": {
 			"animation_length": 4,
 			"bones": {
 				"body": {
@@ -647,7 +647,7 @@
 				}
 			}
 		},
-		"death": {
+		"animation.elemental_golem.death": {
 			"animation_length": 3,
 			"bones": {
 				"body": {
