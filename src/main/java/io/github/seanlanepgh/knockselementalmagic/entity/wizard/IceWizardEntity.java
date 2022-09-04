@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import io.github.seanlanepgh.knockselementalmagic.entity.attack.AttackSound;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.BlazeBolt;
-import io.github.seanlanepgh.knockselementalmagic.entity.spell.IceSpike();
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.IceSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
