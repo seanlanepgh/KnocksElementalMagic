@@ -20,7 +20,7 @@ public class EarthGolemRenderer extends GeoEntityRenderer<EarthGolemEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(EarthGolemEntity instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/ice_golem.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/earth_golem.png");
     }
 
     @Override

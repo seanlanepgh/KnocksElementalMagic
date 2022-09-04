@@ -1,6 +1,7 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.spell;
 
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -115,7 +116,7 @@ public class IceSpike extends EvokerFangs  implements IAnimatable {
                         double d3 = (this.random.nextDouble() * 2.0D - 1.0D) * 0.3D;
                         double d4 = 0.3D + this.random.nextDouble() * 0.3D;
                         double d5 = (this.random.nextDouble() * 2.0D - 1.0D) * 0.3D;
-                        this.level.addParticle(ParticleTypes.FLAME, d0, d1 + 1.0D, d2, d3, d4, d5);
+                        this.level.addParticle(KnocksParticles.SNOWFLAKE.get(), d0, d1 + 1.0D, d2, d3, d4, d5);
                     }
                 }
             }

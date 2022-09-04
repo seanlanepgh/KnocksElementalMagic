@@ -115,7 +115,7 @@ public class AirSpike extends EvokerFangs  implements IAnimatable {
                         double d3 = (this.random.nextDouble() * 2.0D - 1.0D) * 0.3D;
                         double d4 = 0.3D + this.random.nextDouble() * 0.3D;
                         double d5 = (this.random.nextDouble() * 2.0D - 1.0D) * 0.3D;
-                        this.level.addParticle(ParticleTypes.FLAME, d0, d1 + 1.0D, d2, d3, d4, d5);
+                        this.level.addParticle(ParticleTypes.CLOUD, d0, d1 + 1.0D, d2, d3, d4, d5);
                     }
                 }
             }

@@ -146,7 +146,7 @@ public class SmashAttackGoal extends Goal {
                     if(this.entity instanceof IceGolemEntity) {
                         this.entity.level.addFreshEntity(new IceSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
                     } else if (this.entity instanceof FireGolemEntity) {
-                        this.entity.level.addFreshEntity(new IceSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                        this.entity.level.addFreshEntity(new FireSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
                     }else if (this.entity instanceof EarthGolemEntity) {
                         this.entity.level.addFreshEntity(new EarthSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
                     }else if (this.entity instanceof AirGolemEntity) {

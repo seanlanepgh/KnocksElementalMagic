@@ -25,7 +25,7 @@ public class EarthSpikeRenderer extends GeoProjectilesRenderer<EarthSpike> {
 
     @Override
     public ResourceLocation getTextureLocation(EarthSpike instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/fire_crystal_attack.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/earth_crystal_attack.png");
     }
 
     @Override

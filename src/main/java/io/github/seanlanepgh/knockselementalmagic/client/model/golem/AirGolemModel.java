@@ -16,7 +16,7 @@ public class AirGolemModel extends AnimatedTickingGeoModel<AirGolemEntity> {
 
     @Override
     public ResourceLocation getTextureResource(AirGolemEntity object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/ice_golem.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/air_golem.png");
 
     }
     @Override

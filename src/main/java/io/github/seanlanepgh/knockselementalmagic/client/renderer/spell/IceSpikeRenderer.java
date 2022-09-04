@@ -25,7 +25,7 @@ public class IceSpikeRenderer extends GeoProjectilesRenderer<IceSpike> {
 
     @Override
     public ResourceLocation getTextureLocation(IceSpike instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/fire_crystal_attack.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/ice_crystal_attack.png");
     }
 
     @Override

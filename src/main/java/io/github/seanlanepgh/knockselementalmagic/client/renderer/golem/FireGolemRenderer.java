@@ -19,7 +19,7 @@ public class FireGolemRenderer extends GeoEntityRenderer<FireGolemEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(FireGolemEntity instance) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/ice_golem.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/golem/fire_golem.png");
     }
 
     @Override

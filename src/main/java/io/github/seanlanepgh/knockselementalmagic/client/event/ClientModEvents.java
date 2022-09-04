@@ -10,6 +10,9 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.AirGolemRenderer;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.EarthGolemRenderer;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.FireGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.IceGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.AirSpikeRenderer;
@@ -21,6 +24,10 @@ import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.AirGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.EarthGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.FireGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.IceGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
@@ -60,7 +67,11 @@ public final class ClientModEvents {
 		event.put(KnocksEntityTypes.AIR_WIZARD.get(), AirWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.ICE_WIZARD.get(), IceWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.EARTH_WIZARD.get(), EarthWizardEntity.setAttributes());
-		event.put(KnocksEntityTypes.ICE_GOLEM.get(), EarthWizardEntity.setAttributes());
+		event.put(KnocksEntityTypes.ICE_GOLEM.get(), IceGolemEntity.setAttributes());
+		event.put(KnocksEntityTypes.FIRE_GOLEM.get(), FireGolemEntity.setAttributes());
+		event.put(KnocksEntityTypes.EARTH_GOLEM.get(), EarthGolemEntity.setAttributes());
+		event.put(KnocksEntityTypes.AIR_GOLEM.get(), AirGolemEntity.setAttributes());
+
 		//event.put(io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
 	}
 	
@@ -85,17 +96,10 @@ public final class ClientModEvents {
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_STRIKE.get(), QuakeStrikeRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.TORNADO.get(), ElementalRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.SMALL_EARTHBALL.get(), SmallEarthBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.SMALL_AIRBALL.get(), SmallAirBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.SMALL_ICEBALL.get(), SmallIceBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.SMALL_FIREBALL.get(), SmallCustomFireBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.LARGE_FIREBALL.get(), LargeCustomFireBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.LARGE_EARTHBALL.get(), LargeEarthBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.LARGE_AIRBALL.get(), LargeAirBallRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.LARGE_ICEBALL.get(), LargeIceBallRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.FIRE_GOLEM.get(), FireGolemRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.ICE_GOLEM.get(), IceGolemRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.AIR_GOLEM.get(), FireGolemRenderer::new);
-//		event.registerEntityRenderer(KnocksEntityTypes.EARTH_GOLEM.get(), FireGolemRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.AIR_GOLEM.get(), AirGolemRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.EARTH_GOLEM.get(), EarthGolemRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.FIRE_SPIKE.get(), FireSpikeRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.AIR_SPIKE.get(), AirSpikeRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.ICE_SPIKE.get(), IceSpikeRenderer::new);
