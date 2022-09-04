@@ -16,7 +16,7 @@ public class EarthSpikeModel extends AnimatedGeoModel<EarthSpike> {
 
     @Override
     public ResourceLocation getTextureResource(EarthSpike object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/fire_crystal_attack.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/earth_crystal_attack.png");
 
     }
     @Override

@@ -15,7 +15,7 @@ public class IceSpikeModel extends AnimatedGeoModel<IceSpike> {
 
     @Override
     public ResourceLocation getTextureResource(IceSpike object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/fire_crystal_attack.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/entity/spells/ice_crystal_attack.png");
 
     }
     @Override

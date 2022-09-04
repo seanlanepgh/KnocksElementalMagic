@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import io.github.seanlanepgh.knockselementalmagic.entity.attack.AttackSound;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.BlazeBolt;
-import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.AirSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -53,8 +53,8 @@ public class AirWizardEntity extends SpellcasterIllager {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new AirWizardEntity.AirWizardEntityCastingSpellGoal());
         this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Player.class, 8.0F, 0.6D, 1.0D));
-        this.goalSelector.addGoal(4, new AirWizardEntity.AirWizardEntityBoltSpellGoal());
-        this.goalSelector.addGoal(5, new AirWizardEntity.AirWizardEntityAttackSpellGoal());
+//        this.goalSelector.addGoal(4, new AirWizardEntity.AirWizardEntityBoltSpellGoal());
+//        this.goalSelector.addGoal(5, new AirWizardEntity.AirWizardEntityAttackSpellGoal());
         this.goalSelector.addGoal(6, new AirWizardEntity.AirWizardEntityWololoSpellGoal());
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6D));
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
@@ -243,7 +243,7 @@ public class AirWizardEntity extends SpellcasterIllager {
             } while (blockpos.getY() >= Mth.floor(p_32675_) - 1);
 
             if (flag) {
-                AirWizardEntity.this.level.addFreshEntity(new FireSpike(AirWizardEntity.this.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, AirWizardEntity.this));
+                AirWizardEntity.this.level.addFreshEntity(new AirSpike(AirWizardEntity.this.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, AirWizardEntity.this));
             }
 
         }

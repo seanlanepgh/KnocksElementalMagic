@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import io.github.seanlanepgh.knockselementalmagic.entity.attack.AttackSound;
 import io.github.seanlanepgh.knockselementalmagic.entity.projectile.BlazeBolt;
-import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.IceSpike();
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -243,7 +243,7 @@ public class IceWizardEntity extends SpellcasterIllager {
             } while (blockpos.getY() >= Mth.floor(p_32675_) - 1);
 
             if (flag) {
-                IceWizardEntity.this.level.addFreshEntity(new FireSpike(IceWizardEntity.this.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, IceWizardEntity.this));
+                IceWizardEntity.this.level.addFreshEntity(new IceSpike(IceWizardEntity.this.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, IceWizardEntity.this));
             }
 
         }
