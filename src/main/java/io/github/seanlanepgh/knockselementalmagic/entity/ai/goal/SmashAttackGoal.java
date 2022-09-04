@@ -23,6 +23,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SmashAttackGoal extends Goal {
         private int statecheck;
+        private boolean canAttack;
         private final KnocksEntity entity;
         private double moveSpeedAmp = 1;
         private int attackTime = -1;
@@ -32,6 +33,7 @@ public class SmashAttackGoal extends Goal {
             this.moveSpeedAmp = moveSpeedAmpIn;
             this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
             this.statecheck = state;
+            this.canAttack =false;
         }
 
         public boolean canUse() {
@@ -45,6 +47,7 @@ public class SmashAttackGoal extends Goal {
         public void start() {
             super.start();
             this.entity.setAggressive(true);
+            this.entity.setAttackingState(0);
         }
 
         public void stop() {
@@ -55,7 +58,6 @@ public class SmashAttackGoal extends Goal {
         }
 
         public void tick() {
-            System.out.println("smash");
             LivingEntity livingentity = this.entity.getTarget();
             if (livingentity != null) {
                 boolean inLineOfSight = this.entity.getSensing().hasLineOfSight(livingentity);
@@ -64,53 +66,49 @@ public class SmashAttackGoal extends Goal {
                 double d0 = Math.min(livingentity.getY(), this.entity.getY());
                 double d1 = Math.max(livingentity.getY(), this.entity.getY()) + 1.0D;
                 float f = (float) Mth.atan2(livingentity.getZ() - this.entity.getZ(), livingentity.getX() - this.entity.getX());
-//                float f2 = Mth.cos(this.entity.yRotO * 0.017453292F) * 2.0F;
-//                float f3 = Mth.sin(this.entity.yRotO * 0.017453292F) * 2.0F;
-
                 if (inLineOfSight) {
-                    if (this.entity.distanceTo(livingentity) >= 20.0D) {
+                    if (this.entity.distanceTo(livingentity) >= 3.0D) {
                         this.entity.getNavigation().moveTo(livingentity, this.moveSpeedAmp);
-                        this.attackTime = -5;
+                        this.attackTime = -1;
+                        this.entity.setAttackingState(0);
                     } else {
-                        if (this.attackTime == 4) {
+
+                        if (this.attackTime == 0) {
                             this.entity.getNavigation().moveTo(livingentity, this.moveSpeedAmp);
-                            if (this.entity.distanceToSqr(livingentity) < 9.0D) {
-
-                                System.out.println("spawn spikes");
+//
+                            if (d0 <= d1 && (this.attackTime == 0) && (this.attackTime <= 30)) {
+                                livingentity.invulnerableTime = 0;
                                 this.entity.setAttackingState(statecheck);
-                                this.EarthQuake(4.25F, 4);
-                                this.EarthQuakeParticle();
-                                for (int i = 0; i < 5; ++i) {
-                                    float f1 = f + (float) i * (float) Math.PI * 0.4F;
-                                    this.createSpellEntity(this.entity.getX() + (double) Mth.cos(f1) * 1.5D, this.entity.getZ() + (double) Mth.sin(f1) * 1.5D, d0, d1, f1, 5);
-                                }
-
-                                for (int k = 0; k < 8; ++k) {
-                                    float f2 = f + (float) k * (float) Math.PI * 2.0F / 8.0F + 1.2566371F;
-                                    this.createSpellEntity(this.entity.getX() + (double) Mth.cos(f2) * 2.5D, this.entity.getZ() + (double) Mth.sin(f2) * 2.5D, d0, d1, f2, 15);
-                                }
-
-
+//                                System.out.println("attack animation");
+//                                System.out.println("Attack " + this.attackTime);
                             }
-//                            else {
-//                                System.out.println("spawn spikes long");
-//                                this.entity.setAttackingState(statecheck);
-//                                for (int l = 0; l < 16; ++l) {
-//                                    double d2 = 1.25D * (double) (l + 1);
-//                                    int j = 1 * l;
-//                                    this.createSpellEntity(this.entity.getX() + (double) Mth.cos(f) * d2, this.entity.getZ() + (double) Mth.sin(f) * d2, d0, d1, f, j);
-//                                    //this.createSpellEntity(this.entity.getX() - (double) Mth.cos(f) * d2, this.entity.getZ() - (double) Mth.sin(f) * d2, d0, d1, f, j);
-//                                }
-//                            }
-//                            this.entity.setAttackingState(statecheck);
-                            livingentity.invulnerableTime = 0;
                         }
-                        if (this.attackTime == 8) {
-                            this.attackTime = -5;
-                           // this.entity.setAttackingState(0);
+
+                        if (d0 <= d1 && this.attackTime == 45) {
+//                            System.out.println("spawn spikes");
+
+//                            System.out.println("Attack " + this.attackTime);
+                            this.EarthQuake(4.25F, 4);
+                            this.EarthQuakeParticle();
+                            for (int i = 0; i < 5; ++i) {
+                                float f1 = f + (float) i * (float) Math.PI * 0.4F;
+                                this.createSpellEntity(this.entity.getX() + (double) Mth.cos(f1) * 1.5D, this.entity.getZ() + (double) Mth.sin(f1) * 1.5D, d0, d1, f1, 5);
+                            }
+
+                            for (int k = 0; k < 8; ++k) {
+                                float f2 = f + (float) k * (float) Math.PI * 2.0F / 8.0F + 1.2566371F;
+                                this.createSpellEntity(this.entity.getX() + (double) Mth.cos(f2) * 2.5D, this.entity.getZ() + (double) Mth.sin(f2) * 2.5D, d0, d1, f2, 15);
+                            }
+
                         }
+                        if (d0 <= d1 && this.attackTime == 46) {
+                            this.attackTime = -1;
+                            this.entity.setAttackingState(0);
+                        }
+
                     }
                 }
+
             }
         }
 
@@ -170,7 +168,7 @@ public class SmashAttackGoal extends Goal {
             LivingEntity entity = (LivingEntity)var3.next();
             if (!this.entity.isAlliedTo(entity) && !(entity instanceof IceGolemEntity) && entity != this.entity) {
                 entity.hurt(DamageSource.mobAttack(this.entity), (float)this.entity.getAttributeValue(Attributes.ATTACK_DAMAGE) + (float)this.entity.getRandom().nextInt(damage));
-                this.launch(entity, true);
+               this.launch(entity, true);
             }
         }
 
