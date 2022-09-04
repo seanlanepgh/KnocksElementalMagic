@@ -1,8 +1,14 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.ai.goal;
 
 import io.github.seanlanepgh.knockselementalmagic.entity.KnocksEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.AirGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.EarthGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.golem.FireGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.golem.IceGolemEntity;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.AirSpike;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.EarthSpike;
 import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
+import io.github.seanlanepgh.knockselementalmagic.entity.spell.IceSpike;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -137,7 +143,15 @@ public class SmashAttackGoal extends Goal {
                 } while (blockpos.getY() >= Mth.floor(p_32675_) - 1);
 
                 if (flag) {
-                    this.entity.level.addFreshEntity(new FireSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                    if(this.entity instanceof IceGolemEntity) {
+                        this.entity.level.addFreshEntity(new IceSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                    } else if (this.entity instanceof FireGolemEntity) {
+                        this.entity.level.addFreshEntity(new IceSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                    }else if (this.entity instanceof EarthGolemEntity) {
+                        this.entity.level.addFreshEntity(new EarthSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                    }else if (this.entity instanceof AirGolemEntity) {
+                        this.entity.level.addFreshEntity(new AirSpike(this.entity.level, p_32673_, (double) blockpos.getY() + d0, p_32674_, p_32677_, p_32678_, this.entity));
+                    }
                 }
 
             }
