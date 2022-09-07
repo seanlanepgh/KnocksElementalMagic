@@ -3,6 +3,7 @@ package io.github.seanlanepgh.knockselementalmagic.core;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksArmorMaterial;
 import io.github.seanlanepgh.knockselementalmagic.core.items.*;
+import io.github.seanlanepgh.knockselementalmagic.items.armor.IceWizardRobeArmor;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -93,6 +94,15 @@ public class KnocksItems {
         //Mage Armour for each element, hat , robe top and bottom , maybe boots
 
         // Armor
+        public static final RegistryObject<Item> ICE_WIZARD_HAT = ITEMS.register("ice_wizard_hat",
+                () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> ICE_WIZARD_ROBE_TOP = ITEMS.register("ice_wizard_robe_top",
+                () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> ICE_WIZARD_ROBE_BOTTOM = ITEMS.register("ice_wizard_robe_bottom",
+                () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> ICE_WIZARD_BOOTS = ITEMS.register("ice_wizard_boots",
+                () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
         public static final RegistryObject<ArmorItem> FIRE_HOOD = ITEMS.register("fire_hood",
                 () -> new ArmorItem(KnocksArmorMaterial.FIRE_SILK, EquipmentSlot.HEAD,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));

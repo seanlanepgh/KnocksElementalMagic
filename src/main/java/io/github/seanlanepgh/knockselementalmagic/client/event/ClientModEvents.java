@@ -9,6 +9,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.armor.WizardRobeRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.AirGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.EarthGolemRenderer;
@@ -34,6 +35,7 @@ import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.EarthWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.IceWizardEntity;
+import io.github.seanlanepgh.knockselementalmagic.items.armor.IceWizardRobeArmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
 import net.minecraft.client.renderer.entity.BlazeRenderer;
@@ -46,6 +48,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
 @Mod.EventBusSubscriber(modid = KnocksElementalMagic.MODID, bus = Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
@@ -114,7 +117,11 @@ public final class ClientModEvents {
 //		event.registerEntityRenderer(KnocksEntityTypes.VOID_WIZARD.get(), CustomWizardRenderer::new);
 //		event.registerEntityRenderer(KnocksEntityTypes.GOLEM_SPIKE_ENTITY.get(),GolemSpikeRenderer::new );
 //
-		
+		//GeoArmorRenderer.registerArmorRenderer(IceWizardRobeArmor.class, new WizardRobeRenderer());
+	}
+	@SubscribeEvent
+	public static void registerRenderers(final EntityRenderersEvent.AddLayers event) {
+		GeoArmorRenderer.registerArmorRenderer(IceWizardRobeArmor.class, new WizardRobeRenderer());
 	}
 	
 	@SuppressWarnings("resource")
