@@ -124,10 +124,16 @@ public final class ClientModEvents {
 		GeoArmorRenderer.registerArmorRenderer(IceBattleMageArmor.class, new IceBattleMageRobeRenderer());
 		GeoArmorRenderer.registerArmorRenderer(IceWarlockArmor.class, new IceWarlockRobeRenderer());
 
-		GeoArmorRenderer.registerArmorRenderer(FireWizardRobeArmor.class, new IceWizardRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(AirWizardRobeArmor.class, new AirWizardRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(AirSageRobeArmor.class, new AirSageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(AirBattleMageArmor.class, new AirBattleMageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(AirWarlockArmor.class, new AirWarlockRobeRenderer());
+
+
+		GeoArmorRenderer.registerArmorRenderer(FireWizardRobeArmor.class, new FireWizardRobeRenderer());
 		GeoArmorRenderer.registerArmorRenderer(FireSageRobeArmor.class, new FireSageRobeRenderer());
 		GeoArmorRenderer.registerArmorRenderer(FireBattleMageArmor.class, new FireBattleMageRobeRenderer());
-		GeoArmorRenderer.registerArmorRenderer(FireWarlockArmor.class, new IceWarlockRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(FireWarlockArmor.class, new FireWarlockRobeRenderer());
 	}
 	
 	@SuppressWarnings("resource")
