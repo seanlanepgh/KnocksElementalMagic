@@ -9,8 +9,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
-import io.github.seanlanepgh.knockselementalmagic.client.renderer.armor.SageRobeRenderer;
-import io.github.seanlanepgh.knockselementalmagic.client.renderer.armor.WizardRobeRenderer;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.armor.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.AirGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.EarthGolemRenderer;
@@ -25,28 +24,23 @@ import io.github.seanlanepgh.knockselementalmagic.client.renderer.wizard.CustomW
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.entity.golem.AirGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.golem.EarthGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.golem.FireGolemEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.golem.IceGolemEntity;
-import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
-import io.github.seanlanepgh.knockselementalmagic.entity.spell.FireSpike;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.AirWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.EarthWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity;
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.IceWizardEntity;
-import io.github.seanlanepgh.knockselementalmagic.items.armor.IceSageRobeArmor;
-import io.github.seanlanepgh.knockselementalmagic.items.armor.IceWizardRobeArmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
-import net.minecraft.client.renderer.entity.BlazeRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions;
 //import net.minecraftforge.client.event.;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -125,8 +119,15 @@ public final class ClientModEvents {
 	}
 	@SubscribeEvent
 	public static void registerRenderers(final EntityRenderersEvent.AddLayers event) {
-		GeoArmorRenderer.registerArmorRenderer(IceWizardRobeArmor.class, new WizardRobeRenderer());
-		GeoArmorRenderer.registerArmorRenderer(IceSageRobeArmor.class, new SageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(IceWizardRobeArmor.class, new IceWizardRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(IceSageRobeArmor.class, new IceSageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(IceBattleMageArmor.class, new IceBattleMageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(IceWarlockArmor.class, new IceWarlockRobeRenderer());
+
+		GeoArmorRenderer.registerArmorRenderer(FireWizardRobeArmor.class, new IceWizardRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(FireSageRobeArmor.class, new FireSageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(FireBattleMageArmor.class, new FireBattleMageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(FireWarlockArmor.class, new IceWarlockRobeRenderer());
 	}
 	
 	@SuppressWarnings("resource")

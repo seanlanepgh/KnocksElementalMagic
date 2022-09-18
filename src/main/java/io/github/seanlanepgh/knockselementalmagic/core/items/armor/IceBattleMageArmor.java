@@ -1,4 +1,5 @@
-package io.github.seanlanepgh.knockselementalmagic.items.armor;
+package io.github.seanlanepgh.knockselementalmagic.core.items.armor;
+
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -19,7 +20,7 @@ import software.bernie.geckolib3.item.GeoArmorItem;
 import java.util.List;
 
 
-public class IceWizardRobeArmor extends GeoArmorItem implements IAnimatable {
+public class IceBattleMageArmor extends GeoArmorItem implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
@@ -38,7 +39,7 @@ public class IceWizardRobeArmor extends GeoArmorItem implements IAnimatable {
         return this.factory;
     }
 
-    public IceWizardRobeArmor(ArmorMaterial materialIn, EquipmentSlot slot) {
+    public IceBattleMageArmor(ArmorMaterial materialIn, EquipmentSlot slot) {
         super(materialIn, slot, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1));
 
     }

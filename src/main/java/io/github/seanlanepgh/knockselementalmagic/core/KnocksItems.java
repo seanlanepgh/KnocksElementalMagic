@@ -1,10 +1,11 @@
 package io.github.seanlanepgh.knockselementalmagic.core;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
-import io.github.seanlanepgh.knockselementalmagic.core.KnocksArmorMaterial;
 import io.github.seanlanepgh.knockselementalmagic.core.items.*;
-import io.github.seanlanepgh.knockselementalmagic.items.armor.IceSageRobeArmor;
-import io.github.seanlanepgh.knockselementalmagic.items.armor.IceWizardRobeArmor;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.IceBattleMageArmor;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.IceSageRobeArmor;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.IceWarlockArmor;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.IceWizardRobeArmor;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -95,6 +96,42 @@ public class KnocksItems {
         //Mage Armour for each element, hat , robe top and bottom , maybe boots
 
         // Armor
+        public static final RegistryObject<Item> ICE_BATTLE_MAGE_HELMET = ITEMS.register("ice_battle_mage_helmet",
+                () -> new IceBattleMageArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> ICE_BATTLE_MAGE_TOP = ITEMS.register("ice_battle_mage_top",
+                () -> new IceBattleMageArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> ICE_BATTLE_MAGE_BOTTOM = ITEMS.register("ice_battle_mage_bottom",
+                () -> new IceBattleMageArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> ICE_BATTLE_MAGE_BOOTS = ITEMS.register("ice_battle_mage_boots",
+                () -> new IceBattleMageArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> FIRE_BATTLE_MAGE_HELMET = ITEMS.register("fire_battle_mage_helmet",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> FIRE_BATTLE_MAGE_TOP = ITEMS.register("fire_battle_mage_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> FIRE_BATTLE_MAGE_BOTTOM = ITEMS.register("fire_battle_mage_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> FIRE_BATTLE_MAGE_BOOTS = ITEMS.register("fire_battle_mage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> EARTH_BATTLE_MAGE_HELMET = ITEMS.register("earth_battle_mage_helmet",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> EARTH_BATTLE_MAGE_TOP = ITEMS.register("earth_battle_mage_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> EARTH_BATTLE_MAGE_BOTTOM = ITEMS.register("earth_battle_mage_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> EARTH_BATTLE_MAGE_BOOTS = ITEMS.register("earth_battle_mage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> AIR_BATTLE_MAGE_HELMET = ITEMS.register("air_battle_mage_helmet",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> AIR_BATTLE_MAGE_TOP = ITEMS.register("air_battle_mage_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> AIR_BATTLE_MAGE_BOTTOM = ITEMS.register("air_battle_mage_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> AIR_BATTLE_MAGE_BOOTS = ITEMS.register("air_battle_mage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
         public static final RegistryObject<Item> ICE_WIZARD_HAT = ITEMS.register("ice_wizard_hat",
                 () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
         public static final RegistryObject<Item> ICE_WIZARD_ROBE_TOP = ITEMS.register("ice_wizard_robe_top",
@@ -103,6 +140,33 @@ public class KnocksItems {
                 () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
         public static final RegistryObject<Item> ICE_WIZARD_BOOTS = ITEMS.register("ice_wizard_boots",
                 () -> new IceWizardRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> FIRE_WIZARD_HAT = ITEMS.register("fire_wizard_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> FIRE_WIZARD_ROBE_TOP = ITEMS.register("fire_wizard_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> FIRE_WIZARD_ROBE_BOTTOM = ITEMS.register("fire_wizard_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> FIRE_WIZARD_BOOTS = ITEMS.register("fire_wizard_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> EARTH_WIZARD_HAT = ITEMS.register("earth_wizard_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> EARTH_WIZARD_ROBE_TOP = ITEMS.register("earth_wizard_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> EARTH_WIZARD_ROBE_BOTTOM = ITEMS.register("earth_wizard_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> EARTH_WIZARD_BOOTS = ITEMS.register("earth_wizard_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> AIR_WIZARD_HAT = ITEMS.register("air_wizard_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> AIR_WIZARD_ROBE_TOP = ITEMS.register("air_wizard_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> AIR_WIZARD_ROBE_BOTTOM = ITEMS.register("air_wizard_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> AIR_WIZARD_BOOTS = ITEMS.register("air_wizard_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
 
         public static final RegistryObject<Item> ICE_SAGE_HAT = ITEMS.register("ice_sage_hat",
                 () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
@@ -113,117 +177,139 @@ public class KnocksItems {
         public static final RegistryObject<Item> ICE_SAGE_BOOTS = ITEMS.register("ice_sage_boots",
                 () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
 
-        public static final RegistryObject<ArmorItem> FIRE_HOOD = ITEMS.register("fire_hood",
+        public static final RegistryObject<Item> FIRE_SAGE_HAT = ITEMS.register("fire_sage_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> FIRE_SAGE_ROBE_TOP = ITEMS.register("fire_sage_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> FIRE_SAGE_ROBE_BOTTOM = ITEMS.register("fire_sage_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> FIRE_SAGE_BOOTS = ITEMS.register("fire_sage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> EARTH_SAGE_HAT = ITEMS.register("earth_sage_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> EARTH_SAGE_ROBE_TOP = ITEMS.register("earth_sage_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> EARTH_SAGE_ROBE_BOTTOM = ITEMS.register("earth_sage_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> EARTH_SAGE_BOOTS = ITEMS.register("earth_sage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<Item> AIR_SAGE_HAT = ITEMS.register("air_sage_hat",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
+        public static final RegistryObject<Item> AIR_SAGE_ROBE_TOP = ITEMS.register("air_sage_robe_top",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
+        public static final RegistryObject<Item> AIR_SAGE_ROBE_BOTTOM = ITEMS.register("air_sage_robe_bottom",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<Item> AIR_SAGE_BOOTS = ITEMS.register("air_sage_boots",
+                () -> new IceSageRobeArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
+
+        public static final RegistryObject<ArmorItem> FIRE_WARLOCK_HOOD = ITEMS.register("fire_warlock_hood",
                 () -> new ArmorItem(KnocksArmorMaterial.FIRE_SILK, EquipmentSlot.HEAD,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> FIRE_ROBE_TOP = ITEMS.register("fire_robe_top",
+        public static final RegistryObject<ArmorItem> FIRE_WARLOCK_ROBE_TOP = ITEMS.register("fire_warlock_robe_top",
                 () -> new ArmorItem(KnocksArmorMaterial.FIRE_SILK, EquipmentSlot.CHEST,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> FIRE_ROBE_BOTTOMS = ITEMS.register("fire_robe_bottoms",
+        public static final RegistryObject<ArmorItem> FIRE_WARLOCK_ROBE_BOTTOMS = ITEMS.register("fire_warlock_robe_bottoms",
                 () -> new ArmorItem(KnocksArmorMaterial.FIRE_SILK, EquipmentSlot.LEGS,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> FIRE_BOOTS = ITEMS.register("fire_boots",
+        public static final RegistryObject<ArmorItem> FIRE_WARLOCK_BOOTS = ITEMS.register("fire_warlock_boots",
                 () -> new ArmorItem(KnocksArmorMaterial.FIRE_SILK, EquipmentSlot.FEET,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> ICE_HOOD = ITEMS.register("ice_hood",
-                () -> new ArmorItem(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        public static final RegistryObject<ArmorItem> ICE_WARLOCK_HOOD = ITEMS.register("ice_warlock_hood",
+                () -> new IceWarlockArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.HEAD));
 
-        public static final RegistryObject<ArmorItem> ICE_ROBE_TOP = ITEMS.register("ice_robe_top",
-                () -> new ArmorItem(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        public static final RegistryObject<ArmorItem> ICE_WARLOCK_ROBE_TOP = ITEMS.register("ice_warlock_robe_top",
+                () -> new IceWarlockArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.CHEST));
 
-        public static final RegistryObject<ArmorItem> ICE_ROBE_BOTTOMS = ITEMS.register("ice_robe_bottoms",
-                () -> new ArmorItem(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+        public static final RegistryObject<ArmorItem> ICE_WARLOCK_ROBE_BOTTOMS = ITEMS.register("ice_warlock_robe_bottoms",
+                () -> new IceWarlockArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.LEGS));
+        public static final RegistryObject<ArmorItem> ICE_WARLOCK_BOOTS = ITEMS.register("ice_warlock_boots",
+                () -> new IceWarlockArmor(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET));
 
-        public static final RegistryObject<ArmorItem> ICE_BOOTS = ITEMS.register("ice_boots",
-                () -> new ArmorItem(KnocksArmorMaterial.ICE_SILK, EquipmentSlot.FEET,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> EARTH_HOOD = ITEMS.register("earth_hood",
+        public static final RegistryObject<ArmorItem> EARTH_WARLOCK_HOOD = ITEMS.register("earth_warlock_hood",
                 () -> new ArmorItem(KnocksArmorMaterial.EARTH_SILK, EquipmentSlot.HEAD,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> EARTH_ROBE_TOP = ITEMS.register("earth_robe_top",
+        public static final RegistryObject<ArmorItem> EARTH_WARLOCK_ROBE_TOP = ITEMS.register("earth_warlock_robe_top",
                 () -> new ArmorItem(KnocksArmorMaterial.EARTH_SILK, EquipmentSlot.CHEST,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> EARTH_ROBE_BOTTOMS = ITEMS.register("earth_robe_bottoms",
+        public static final RegistryObject<ArmorItem> EARTH_WARLOCK_ROBE_BOTTOMS = ITEMS.register("earth_warlock_robe_bottoms",
                 () -> new ArmorItem(KnocksArmorMaterial.EARTH_SILK, EquipmentSlot.LEGS,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> EARTH_BOOTS = ITEMS.register("earth_boots",
+        public static final RegistryObject<ArmorItem> EARTH_WARLOCK_BOOTS = ITEMS.register("earth_warlock_boots",
                 () -> new ArmorItem(KnocksArmorMaterial.EARTH_SILK, EquipmentSlot.FEET,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> AIR_HOOD = ITEMS.register("air_hood",
+        public static final RegistryObject<ArmorItem> AIR_WARLOCK_HOOD = ITEMS.register("air_warlock_hood",
                 () -> new ArmorItem(KnocksArmorMaterial.AIR_SILK, EquipmentSlot.HEAD,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> AIR_ROBE_TOP = ITEMS.register("air_robe_top",
+        public static final RegistryObject<ArmorItem> AIR_WARLOCK_ROBE_TOP = ITEMS.register("air_warlock_robe_top",
                 () -> new ArmorItem(KnocksArmorMaterial.AIR_SILK, EquipmentSlot.CHEST,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem>AIR_ROBE_BOTTOMS = ITEMS.register("air_robe_bottoms",
+        public static final RegistryObject<ArmorItem>AIR_WARLOCK_ROBE_BOTTOMS = ITEMS.register("air_warlock_robe_bottoms",
                 () -> new ArmorItem(KnocksArmorMaterial.AIR_SILK, EquipmentSlot.LEGS,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> AIR_BOOTS = ITEMS.register("air_boots",
+        public static final RegistryObject<ArmorItem> AIR_WARLOCK_BOOTS = ITEMS.register("air_warlock_boots",
                 () -> new ArmorItem(KnocksArmorMaterial.AIR_SILK, EquipmentSlot.FEET,
                         new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
-        public static final RegistryObject<ArmorItem> NATURE_HOOD = ITEMS.register("nature_hood",
-                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.HEAD,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> NATURE_ROBE_TOP = ITEMS.register("nature_robe_top",
-                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.CHEST,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> NATURE_ROBE_BOTTOMS = ITEMS.register("nature_robe_bottoms",
-                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.LEGS,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> NATURE_BOOTS = ITEMS.register("nature_boots",
-                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.FEET,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> VOID_HOOD = ITEMS.register("void_hood",
-                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.HEAD,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> VOID_ROBE_TOP = ITEMS.register("void_robe_top",
-                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.CHEST,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> VOID_ROBE_BOTTOMS = ITEMS.register("void_robe_bottoms",
-                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.LEGS,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> VOID_BOOTS = ITEMS.register("void_boots",
-                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.FEET,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> SOUL_HOOD = ITEMS.register("soul_hood",
-                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.HEAD,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> SOUL_ROBE_TOP = ITEMS.register("soul_robe_top",
-                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.CHEST,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> SOUL_ROBE_BOTTOMS = ITEMS.register("soul_robe_bottoms",
-                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.LEGS,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
-        public static final RegistryObject<ArmorItem> SOUL_BOOTS = ITEMS.register("soul_boots",
-                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.FEET,
-                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//        public static final RegistryObject<ArmorItem> NATURE_HOOD = ITEMS.register("nature_hood",
+//                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.HEAD,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> NATURE_ROBE_TOP = ITEMS.register("nature_robe_top",
+//                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.CHEST,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> NATURE_ROBE_BOTTOMS = ITEMS.register("nature_robe_bottoms",
+//                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.LEGS,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> NATURE_BOOTS = ITEMS.register("nature_boots",
+//                () -> new ArmorItem(KnocksArmorMaterial.NATURE_SILK, EquipmentSlot.FEET,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> VOID_HOOD = ITEMS.register("void_hood",
+//                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.HEAD,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> VOID_ROBE_TOP = ITEMS.register("void_robe_top",
+//                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.CHEST,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> VOID_ROBE_BOTTOMS = ITEMS.register("void_robe_bottoms",
+//                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.LEGS,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> VOID_BOOTS = ITEMS.register("void_boots",
+//                () -> new ArmorItem(KnocksArmorMaterial.VOID_SILK, EquipmentSlot.FEET,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> SOUL_HOOD = ITEMS.register("soul_hood",
+//                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.HEAD,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> SOUL_ROBE_TOP = ITEMS.register("soul_robe_top",
+//                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.CHEST,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> SOUL_ROBE_BOTTOMS = ITEMS.register("soul_robe_bottoms",
+//                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.LEGS,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+//
+//        public static final RegistryObject<ArmorItem> SOUL_BOOTS = ITEMS.register("soul_boots",
+//                () -> new ArmorItem(KnocksArmorMaterial.SOUL_SILK, EquipmentSlot.FEET,
+//                        new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
         //	    public static final RegistryObject<Item> MAGIC_WAND = ITEMS.register("magic_wand", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));

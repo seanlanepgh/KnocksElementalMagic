@@ -1,12 +1,10 @@
-package io.github.seanlanepgh.knockselementalmagic.items.armor;
+package io.github.seanlanepgh.knockselementalmagic.core.items.armor;
 
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -16,10 +14,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.item.GeoArmorItem;
 
-import java.util.List;
-
-
-public class IceSageRobeArmor extends GeoArmorItem implements IAnimatable {
+public class FireWarlockArmor extends GeoArmorItem implements IAnimatable {
 
     private AnimationFactory factory = new AnimationFactory(this);
 
@@ -38,7 +33,7 @@ public class IceSageRobeArmor extends GeoArmorItem implements IAnimatable {
         return this.factory;
     }
 
-    public IceSageRobeArmor(ArmorMaterial materialIn, EquipmentSlot slot) {
+    public FireWarlockArmor(ArmorMaterial materialIn, EquipmentSlot slot) {
         super(materialIn, slot, new Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1));
 
     }

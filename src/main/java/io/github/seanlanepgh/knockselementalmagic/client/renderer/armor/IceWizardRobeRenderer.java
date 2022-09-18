@@ -1,12 +1,12 @@
 package io.github.seanlanepgh.knockselementalmagic.client.renderer.armor;
 
-import io.github.seanlanepgh.knockselementalmagic.client.model.armor.WizardRobeModel;
-import io.github.seanlanepgh.knockselementalmagic.items.armor.IceWizardRobeArmor;
+import io.github.seanlanepgh.knockselementalmagic.client.model.armor.IceWizardRobeModel;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.IceWizardRobeArmor;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 
-public class WizardRobeRenderer extends GeoArmorRenderer<IceWizardRobeArmor> {
-	public WizardRobeRenderer() {
-		super(new WizardRobeModel());
+public class IceWizardRobeRenderer extends GeoArmorRenderer<IceWizardRobeArmor> {
+	public IceWizardRobeRenderer() {
+		super(new IceWizardRobeModel());
 
 		this.headBone = "armorHead";
 		this.bodyBone = "armorBody";
