@@ -129,6 +129,12 @@ public final class ClientModEvents {
 		GeoArmorRenderer.registerArmorRenderer(AirBattleMageArmor.class, new AirBattleMageRobeRenderer());
 		GeoArmorRenderer.registerArmorRenderer(AirWarlockArmor.class, new AirWarlockRobeRenderer());
 
+		GeoArmorRenderer.registerArmorRenderer(EarthWizardRobeArmor.class, new EarthWizardRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(EarthSageRobeArmor.class, new EarthSageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(EarthBattleMageArmor.class, new EarthBattleMageRobeRenderer());
+		GeoArmorRenderer.registerArmorRenderer(EarthWarlockArmor.class, new EarthWarlockRobeRenderer());
+
+
 
 		GeoArmorRenderer.registerArmorRenderer(FireWizardRobeArmor.class, new FireWizardRobeRenderer());
 		GeoArmorRenderer.registerArmorRenderer(FireSageRobeArmor.class, new FireSageRobeRenderer());
