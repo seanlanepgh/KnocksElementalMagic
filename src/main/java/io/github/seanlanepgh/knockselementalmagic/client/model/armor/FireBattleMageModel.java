@@ -14,7 +14,7 @@ public class FireBattleMageModel extends AnimatedGeoModel <FireBattleMageArmor> 
 
     @Override
     public ResourceLocation getTextureResource (FireBattleMageArmor object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/ice_battle_mage_robes.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/fire_battle_mage_robes.png");
     }
 
     @Override

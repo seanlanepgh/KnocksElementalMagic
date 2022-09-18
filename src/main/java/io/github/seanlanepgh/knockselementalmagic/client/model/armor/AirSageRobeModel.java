@@ -15,7 +15,7 @@ public class AirSageRobeModel extends AnimatedGeoModel<AirSageRobeArmor> {
 
     @Override
     public ResourceLocation getTextureResource(AirSageRobeArmor object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/ice_sage_robes.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/air_sage_robes.png");
     }
 
     @Override

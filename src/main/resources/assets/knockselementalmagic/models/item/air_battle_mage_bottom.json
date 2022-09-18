@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "knockselementalmagic:items/air_battle_mage_bottom"
+  }
+}

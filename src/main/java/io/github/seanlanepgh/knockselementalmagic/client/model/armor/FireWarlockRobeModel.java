@@ -15,7 +15,7 @@ public class FireWarlockRobeModel extends AnimatedGeoModel<FireWarlockArmor> {
 
     @Override
     public ResourceLocation getTextureResource(FireWarlockArmor object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/ice_warlock_robes.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/fire_warlock_robes.png");
     }
 
     @Override

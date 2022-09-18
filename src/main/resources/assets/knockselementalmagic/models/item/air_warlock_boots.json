@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knockselementalmagic:items/air_hood"
+    "layer0": "knockselementalmagic:items/air_warlock_boots"
   }
 }

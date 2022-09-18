@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "knockselementalmagic:items/ice_sage_robe_top"
+  }
+}

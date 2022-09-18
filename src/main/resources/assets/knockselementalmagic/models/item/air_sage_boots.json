@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "knockselementalmagic:items/air_sage_boots"
+  }
+}

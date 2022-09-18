@@ -9,12 +9,12 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 public class AirWizardRobeModel extends AnimatedGeoModel<AirWizardRobeArmor> {
     @Override
     public ResourceLocation getModelResource(AirWizardRobeArmor object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "geo/ice_wizard_robes.geo.json");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "geo/wizard_robes.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(AirWizardRobeArmor object) {
-        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/ice_wizard_robes.png");
+        return new ResourceLocation(KnocksElementalMagic.MODID, "textures/models/armor/air_wizard_robes.png");
     }
 
     @Override
