@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knockselementalmagic:items/ice_sage_hat.json"
+    "layer0": "knockselementalmagic:items/ice_sage_hat"
   }
 }
