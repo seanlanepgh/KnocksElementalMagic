@@ -45,8 +45,11 @@ public class KWDamageSource {
    private boolean isExplosion;
    private boolean isFall;
    private boolean noAggro;
-   
 
+   public static final DamageSource AIR_MAGIC = (new DamageSource("air_magic")).bypassArmor().setMagic();
+   public static final DamageSource FIRE_MAGIC = (new DamageSource("fire_magic")).bypassArmor().setMagic();
+   public static final DamageSource ICE_MAGIC = (new DamageSource("ice_magic")).bypassArmor().setMagic();
+   public static final DamageSource EARTH_MAGIC = (new DamageSource("earth_magic")).bypassArmor().setMagic();
  
 
 //   public static DamageSource iceBall(SmallIceBall p_19350_, @Nullable Entity p_19351_) {
