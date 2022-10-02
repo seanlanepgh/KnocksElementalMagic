@@ -6,6 +6,13 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
+import io.github.seanlanepgh.knockselementalmagic.core.items.armor.effects.ArmorEffect;
+
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
 public class BaseArmorMaterial implements ArmorMaterial {
     private final int enchantability;
@@ -14,6 +21,7 @@ public class BaseArmorMaterial implements ArmorMaterial {
     private final String name;
     private final SoundEvent equipSound;
     private final Supplier<Ingredient> repairMaterial;
+    private final List<ArmorEffect> effects = new LinkedList<>();
 
     public BaseArmorMaterial(int enchantability, int[] durability, int[] damageReduction,
             float knockbackResistance, float toughness, String name, SoundEvent equipSound,
@@ -67,4 +75,4 @@ public class BaseArmorMaterial implements ArmorMaterial {
     public float getToughness() {
         return this.toughness;
     }
-}
+    }
