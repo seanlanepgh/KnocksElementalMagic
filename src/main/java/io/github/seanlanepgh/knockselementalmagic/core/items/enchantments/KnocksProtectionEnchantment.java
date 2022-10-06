@@ -7,7 +7,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.enchantment.*;
 
 public class KnocksProtectionEnchantment extends Enchantment {
-        public ProtectionEnchantment(Enchantment.Rarity p_45126_, net.minecraft.world.item.enchantment.ProtectionEnchantment.Type p_45127_, EquipmentSlot... p_45128_) {
+        public KnocksProtectionEnchantment(Enchantment.Rarity p_45126_, net.minecraft.world.item.enchantment.ProtectionEnchantment.Type p_45127_, EquipmentSlot... p_45128_) {
             super(p_45126_, p_45127_ == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL ? EnchantmentCategory.ARMOR_FEET : EnchantmentCategory.ARMOR, p_45128_);
             this.type = p_45127_;
         }
@@ -24,20 +24,22 @@ public class KnocksProtectionEnchantment extends Enchantment {
             return 4;
         }
 
-        public int getDamageProtection(int p_45133_, DamageSource p_45134_) {
+        public int getDamageProtection(int p_45133_, KWDamageSource p_45134_) {
             if (p_45134_.isBypassInvul()) {
                 return 0;
             } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.ALL) {
                 return p_45133_;
-            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FIRE && p_45134_.isFire()) {
+            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FIRE && p_45134_.isFire()) {
                 return p_45133_ * 2;
-            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL && p_45134_.isFall()) {
-                return p_45133_ * 3;
-            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.EXPLOSION && p_45134_.isExplosion()) {
+            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.AIR && p_45134_.isAir()) {
                 return p_45133_ * 2;
-            } else {
-                return this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.PROJECTILE && p_45134_.isProjectile() ? p_45133_ * 2 : 0;
+            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.EARTH && p_45134_.isEarth()) {
+                return p_45133_ * 2;
+            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.ICE && p_45134_.isIce()) {
+                return p_45133_ * 2;
             }
+
+
         }
 
         public boolean checkCompatibility(Enchantment p_45142_) {
@@ -52,29 +54,11 @@ public class KnocksProtectionEnchantment extends Enchantment {
             }
         }
 
-        public static int getFireAfterDampener(LivingEntity p_45139_, int p_45140_) {
-            int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.FIRE_PROTECTION, p_45139_);
-            if (i > 0) {
-                p_45140_ -= Mth.floor((float)p_45140_ * (float)i * 0.15F);
-            }
-
-            return p_45140_;
-        }
-
-        public static double getExplosionKnockbackAfterDampener(LivingEntity p_45136_, double p_45137_) {
-            int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.BLAST_PROTECTION, p_45136_);
-            if (i > 0) {
-                p_45137_ -= (double)Mth.floor(p_45137_ * (double)((float)i * 0.15F));
-            }
-
-            return p_45137_;
-        }
-
         public static enum Type {
 
             FIRE(10, 8),
             AIR(10,8),
-            ICE(10,8)
+            ICE(10,8),
             EARTH(10, 8);
 
             private final int minCost;
@@ -94,4 +78,3 @@ public class KnocksProtectionEnchantment extends Enchantment {
             }
         }
     }
-}
