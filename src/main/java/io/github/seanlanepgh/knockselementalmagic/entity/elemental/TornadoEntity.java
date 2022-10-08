@@ -1,5 +1,6 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -84,7 +85,7 @@ public class TornadoEntity extends KnocksEntity implements IAnimatable, IAnimati
             }
 
             for (int i = 0; i < 2; ++i) {
-                this.level.addParticle(KnocksParticles.SNOWFLAKE.get(), this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
+                this.level.addParticle(ParticleTypes.CLOUD, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), 0.0D, 0.0D, 0.0D);
             }
         }
 
@@ -137,10 +138,10 @@ public class TornadoEntity extends KnocksEntity implements IAnimatable, IAnimati
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.tornado.walk", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.blizz.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.tornado.idle", true));
         return PlayState.CONTINUE;
 
     }
