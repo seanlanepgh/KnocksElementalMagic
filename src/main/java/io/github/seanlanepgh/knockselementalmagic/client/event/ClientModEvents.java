@@ -60,11 +60,12 @@ public final class ClientModEvents {
 	@SubscribeEvent
 	public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
 		event.put(KnocksEntityTypes.BLIZZ.get(), BlizzEntity.setAttributes());
-		event.put(KnocksEntityTypes.QUAKE.get(), BlizzEntity.setAttributes());
-		event.put(KnocksEntityTypes.TORNADO.get(), BlizzEntity.setAttributes());
+		event.put(KnocksEntityTypes.QUAKE.get(), QuakeEntity.setAttributes());
+		event.put(KnocksEntityTypes.TORNADO.get(), TornadoEntity.setAttributes());
 		event.put(KnocksEntityTypes.BLAZE_KNIGHT.get(), BlazeKnightEntity.setAttributes());
 		event.put(KnocksEntityTypes.BLIZZ_KNIGHT.get(), BlizzKnightEntity.setAttributes());
 		event.put(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightEntity.setAttributes());
+		event.put(KnocksEntityTypes.TORNADO_KNIGHT.get(), TornadoKnightEntity.setAttributes());
 		event.put(KnocksEntityTypes.FIRE_WIZARD.get(), FireWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.AIR_WIZARD.get(), AirWizardEntity.setAttributes());
 		event.put(KnocksEntityTypes.ICE_WIZARD.get(), IceWizardEntity.setAttributes());
@@ -98,6 +99,7 @@ public final class ClientModEvents {
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_KNIGHT.get(), QuakeKnightRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.QUAKE_STRIKE.get(), QuakeStrikeRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.TORNADO.get(), TornadoRenderer::new);
+		event.registerEntityRenderer(KnocksEntityTypes.TORNADO_KNIGHT.get(), TornadoKnightRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.FIRE_GOLEM.get(), FireGolemRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.ICE_GOLEM.get(), IceGolemRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.AIR_GOLEM.get(), AirGolemRenderer::new);
