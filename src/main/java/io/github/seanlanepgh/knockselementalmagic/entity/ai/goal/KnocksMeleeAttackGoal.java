@@ -53,18 +53,19 @@ import io.github.seanlanepgh.knockselementalmagic.entity.KnocksEntity;
                 if (inLineOfSight) {
                     if (this.entity.distanceTo(livingentity) >= 3.0D) {
                         this.entity.getNavigation().moveTo(livingentity, this.moveSpeedAmp);
-                        this.attackTime = -5;
+                        this.attackTime = -1;
                     } else {
-                        if (this.attackTime == 4) {
+                        if (this.attackTime == 0) {
                             this.entity.getNavigation().moveTo(livingentity, this.moveSpeedAmp);
                             if (d0 <= d1) {
+                                livingentity.invulnerableTime = 0;
                                 this.entity.doHurtTarget(livingentity);
                                 this.entity.setAttackingState(statecheck);
                             }
-                            livingentity.invulnerableTime = 0;
+
                         }
-                        if (this.attackTime == 8) {
-                            this.attackTime = -5;
+                        if (this.attackTime == 45) {
+                            this.attackTime = -1;
                             this.entity.setAttackingState(0);
                         }
                     }

@@ -1,14 +1,16 @@
 package io.github.seanlanepgh.knockselementalmagic.core.items.enchantments;
 
-import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageSource;
+import io.github.seanlanepgh.knockselementalmagic.core.damageSource.KWDamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.enchantment.*;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.ProtectionEnchantment;
 
 public class KnocksProtectionEnchantment extends Enchantment {
-        public KnocksProtectionEnchantment(Enchantment.Rarity p_45126_, net.minecraft.world.item.enchantment.ProtectionEnchantment.Type p_45127_, EquipmentSlot... p_45128_) {
-            super(p_45126_, p_45127_ == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL ? EnchantmentCategory.ARMOR_FEET : EnchantmentCategory.ARMOR, p_45128_);
+    public final KnocksProtectionEnchantment.Type type;
+
+        public KnocksProtectionEnchantment(Enchantment.Rarity p_45126_, KnocksProtectionEnchantment.Type p_45127_, EquipmentSlot... p_45128_) {
+            super(p_45126_, p_45127_ == KnocksProtectionEnchantment.Type.FALL ? EnchantmentCategory.ARMOR_FEET : EnchantmentCategory.ARMOR, p_45128_);
             this.type = p_45127_;
         }
 
@@ -27,35 +29,38 @@ public class KnocksProtectionEnchantment extends Enchantment {
         public int getDamageProtection(int p_45133_, KWDamageSource p_45134_) {
             if (p_45134_.isBypassInvul()) {
                 return 0;
-            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.ALL) {
-                return p_45133_;
-            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FIRE && p_45134_.isFire()) {
+            }  else if (this.type == KnocksProtectionEnchantment.Type.FALL && p_45134_.isFall()) {
+                return p_45133_ * 3;
+            } else if (this.type == KnocksProtectionEnchantment.Type.FIRE && p_45134_.isFire()) {
                 return p_45133_ * 2;
-            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.AIR && p_45134_.isAir()) {
+            }  else if (this.type == KnocksProtectionEnchantment.Type.AIR && p_45134_.isAir()) {
                 return p_45133_ * 2;
-            }  else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.EARTH && p_45134_.isEarth()) {
+            }  else if (this.type == KnocksProtectionEnchantment.Type.EARTH && p_45134_.isEarth()) {
                 return p_45133_ * 2;
-            } else if (this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.ICE && p_45134_.isIce()) {
+            } else if (this.type == KnocksProtectionEnchantment.Type.ICE && p_45134_.isIce()) {
                 return p_45133_ * 2;
-            }
-
-
-        }
-
-        public boolean checkCompatibility(Enchantment p_45142_) {
-            if (p_45142_ instanceof net.minecraft.world.item.enchantment.ProtectionEnchantment protectionenchantment) {
-                if (this.type == protectionenchantment.type) {
-                    return false;
-                } else {
-                    return this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL || protectionenchantment.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL;
-                }
             } else {
-                return super.checkCompatibility(p_45142_);
+                return this.type == KnocksProtectionEnchantment.Type.PROJECTILE && p_45134_.isProjectile() ? p_45133_ * 2 : 0;
             }
+
+
         }
+
+//        public boolean checkCompatibility(Enchantment p_45142_) {
+//            if (p_45142_ instanceof net.minecraft.world.item.enchantment.ProtectionEnchantment protectionenchantment) {
+//                if (this.type == protectionenchantment.type) {
+//                    return false;
+//                } else {
+//                    return this.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL || protectionenchantment.type == net.minecraft.world.item.enchantment.ProtectionEnchantment.Type.FALL;
+//                }
+//            } else {
+//                return super.checkCompatibility(p_45142_);
+//            }
+//        }
 
         public static enum Type {
-
+            PROJECTILE(3, 6),
+            FALL(5, 6),
             FIRE(10, 8),
             AIR(10,8),
             ICE(10,8),

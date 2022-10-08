@@ -1,15 +1,15 @@
-package io.github.seanlanepgh.knockselementalmagic.damageSource;
-
-import io.github.seanlanepgh.knockselementalmagic.entity.projectile.*;
-
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
-import net.minecraft.world.entity.Entity;
-
-import javax.annotation.Nullable;
+package io.github.seanlanepgh.knockselementalmagic.core.damageSource;
 
 public class KWDamageSource {
-//   public static final DamageSource IN_FIRE = (new DamageSource("inFire")).bypassArmor().setIsFire();
+
+   private boolean isIceSource;
+   private boolean isEarthSource;
+   private boolean isAirSource;
+   public final String msgId;
+
+
+
+   //   public static final DamageSource IN_FIRE = (new DamageSource("inFire")).bypassArmor().setIsFire();
 //   public static final DamageSource LIGHTNING_BOLT = new DamageSource("lightningBolt");
 //   public static final DamageSource ON_FIRE = (new DamageSource("onFire")).bypassArmor().setIsFire();
 //   public static final DamageSource LAVA = (new DamageSource("lava")).setIsFire();
@@ -46,11 +46,69 @@ public class KWDamageSource {
    private boolean isFall;
    private boolean noAggro;
 
-   public static final DamageSource AIR_MAGIC = (new DamageSource("air_magic")).bypassArmor().setMagic();
-   public static final DamageSource FIRE_MAGIC = (new DamageSource("fire_magic")).bypassArmor().setMagic();
-   public static final DamageSource ICE_MAGIC = (new DamageSource("ice_magic")).bypassArmor().setMagic();
-   public static final DamageSource EARTH_MAGIC = (new DamageSource("earth_magic")).bypassArmor().setMagic();
- 
+   public static final KWDamageSource AIR_MAGIC = (new KWDamageSource("air_magic")).setIsAir().setProjectile();
+   public static final KWDamageSource ICE_MAGIC = (new KWDamageSource("ice_magic")).setIsIce().setProjectile();
+   public static final KWDamageSource EARTH_MAGIC = (new KWDamageSource("earth_magic")).setIsEarth().setProjectile();
+
+
+   public boolean isProjectile() {
+      return this.isProjectile;
+   }
+
+   public KWDamageSource setProjectile() {
+      this.isProjectile = true;
+      return this;
+   }
+
+   public KWDamageSource setIsAir() {
+      this.isAirSource = true;
+      return this;
+   }
+      public boolean isAir() {
+         return this.isAirSource;
+      }
+
+   public KWDamageSource setIsIce() {
+      this.isIceSource = true;
+      return this;
+   }
+   public boolean isIce() {
+      return this.isIceSource;
+   }
+   public KWDamageSource setIsEarth() {
+      this.isEarthSource = true;
+      return this;
+   }
+   public boolean isEarth() {
+      return this.isEarthSource;
+   }
+
+   public boolean isFall() {
+      return this.isFall;
+   }
+
+   public KWDamageSource setIsFall() {
+      this.isFall = true;
+      return this;
+   }
+
+   public KWDamageSource setIsFire() {
+      this.isFireSource = true;
+      return this;
+   }
+
+   public KWDamageSource bypassInvul() {
+      this.bypassInvul = true;
+      return this;
+   }
+
+   public boolean isBypassInvul() {
+      return this.bypassInvul;
+   }
+
+   public boolean isFire() {
+      return this.isFireSource;
+   }
 
 //   public static DamageSource iceBall(SmallIceBall p_19350_, @Nullable Entity p_19351_) {
 //      return p_19351_ == null ? (new IndirectEntityDamageSource("freeze", p_19350_, p_19350_)).setProjectile() : (new IndirectEntityDamageSource("iceball", p_19350_, p_19351_)).setProjectile();
@@ -77,5 +135,7 @@ public class KWDamageSource {
 //	   public static DamageSource largeFireBall(LargeCustomFireBall  smallFireBall, @Nullable Entity p_19351_) {
 //		      return p_19351_ == null ? (new IndirectEntityDamageSource("generic", smallFireBall, smallFireBall)).setProjectile() : (new IndirectEntityDamageSource("fireball", smallFireBall, p_19351_)).setProjectile();
 //		   }
-
+public KWDamageSource(String p_19333_) {
+   this.msgId = p_19333_;
+}
 }

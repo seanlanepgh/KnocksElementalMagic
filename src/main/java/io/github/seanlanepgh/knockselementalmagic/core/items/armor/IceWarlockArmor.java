@@ -1,6 +1,8 @@
 package io.github.seanlanepgh.knockselementalmagic.core.items.armor;
 
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksEnchantments;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -46,6 +48,22 @@ public class IceWarlockArmor extends GeoArmorItem implements IAnimatable {
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return false;
+    }
+
+    @Override
+    public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
+        if (this.allowedIn(tab)) {
+            ItemStack stack = new ItemStack(this);
+            switch (this.getSlot()) {
+                case HEAD -> stack.enchant(KnocksEnchantments.ICE_RESISTANCE.get(), 1);
+                case CHEST -> stack.enchant(KnocksEnchantments.ICE_RESISTANCE.get(), 1);
+                case LEGS -> stack.enchant(KnocksEnchantments.ICE_RESISTANCE.get(), 1);
+                case FEET -> stack.enchant(KnocksEnchantments.ICE_RESISTANCE.get(), 1);
+                default -> {
+                }
+            }
+            items.add(stack);
+        }
     }
 
 }

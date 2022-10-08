@@ -1,5 +1,7 @@
 package io.github.seanlanepgh.knockselementalmagic.core.items.armor;
 
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksEnchantments;
+import net.minecraft.core.NonNullList;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,7 +16,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.item.GeoArmorItem;
 import java.util.List;
-
+import net.minecraft.core.NonNullList;
 
 public class EarthBattleMageArmor extends GeoArmorItem implements IAnimatable {
 
@@ -43,6 +45,22 @@ public class EarthBattleMageArmor extends GeoArmorItem implements IAnimatable {
     @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return false;
+    }
+
+    @Override
+    public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> items) {
+        if (this.allowedIn(tab)) {
+            ItemStack stack = new ItemStack(this);
+            switch (this.getSlot()) {
+                case HEAD -> stack.enchant(KnocksEnchantments.EARTH_RESISTANCE.get(), 1);
+                case CHEST -> stack.enchant(KnocksEnchantments.EARTH_RESISTANCE.get(), 1);
+                case LEGS -> stack.enchant(KnocksEnchantments.EARTH_RESISTANCE.get(), 1);
+                case FEET -> stack.enchant(KnocksEnchantments.EARTH_RESISTANCE.get(), 1);
+                default -> {
+                }
+            }
+            items.add(stack);
+        }
     }
 
 }

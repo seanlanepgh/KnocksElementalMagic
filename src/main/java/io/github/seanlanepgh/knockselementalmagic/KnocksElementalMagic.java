@@ -59,7 +59,7 @@ public class KnocksElementalMagic
         // Register the Deferred Register to the mod event bus so items get registered
         KnocksParticles.PARTICLES.register(modEventBus);
         KnocksItems.ITEMS.register(modEventBus);
-
+        KnocksEnchantments.ENCHANTMENTS.register(modEventBus);
         KnocksEntityTypes.register(modEventBus);
         GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
