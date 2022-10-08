@@ -128,6 +128,9 @@ public class KnocksEntityTypes {
     public static final RegistryObject<EntityType<TornadoEntity>> TORNADO = ENTITY_TYPES.register("tornado",
             () -> EntityType.Builder.of(TornadoEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
                     .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado").toString()));
+    public static final RegistryObject<EntityType<TornadoKnightEntity>> TORNADO_KNIGHT = ENTITY_TYPES.register("tornado_knight",
+            () -> EntityType.Builder.of(TornadoKnightEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
+                    .clientTrackingRange(8).build(new ResourceLocation(KnocksElementalMagic.MODID, "tornado_knight").toString()));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
