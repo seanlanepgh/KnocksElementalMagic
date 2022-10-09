@@ -1,5 +1,4 @@
 package io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental;
-package io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

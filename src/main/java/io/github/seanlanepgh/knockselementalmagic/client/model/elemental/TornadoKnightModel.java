@@ -1,5 +1,4 @@
 package io.github.seanlanepgh.knockselementalmagic.client.model.elemental;
-package io.github.seanlanepgh.knockselementalmagic.client.model.elemental;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 import io.github.seanlanepgh.knockselementalmagic.entity.elemental.*;
@@ -24,7 +23,7 @@ public class TornadoKnightModel  extends AnimatedTickingGeoModel<TornadoKnightEn
 
     }
     @Override
-    public ResourceLocation getAnimationResource(TornadoEntity animatable) {
+    public ResourceLocation getAnimationResource(TornadoKnightEntity animatable) {
         return new ResourceLocation(KnocksElementalMagic.MODID, "animations/tornado_knight.animation.json");
     }
 
@@ -32,7 +31,7 @@ public class TornadoKnightModel  extends AnimatedTickingGeoModel<TornadoKnightEn
 
     @SuppressWarnings({ "unchecked", "unused", "rawtypes" })
     @Override
-    public void setLivingAnimations(TornadoEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
+    public void setLivingAnimations(TornadoKnightEntity entity, Integer uniqueID, AnimationEvent customPredicate) {
         super.setLivingAnimations(entity, uniqueID, customPredicate);
         IBone head = this.getAnimationProcessor().getBone("head");
 

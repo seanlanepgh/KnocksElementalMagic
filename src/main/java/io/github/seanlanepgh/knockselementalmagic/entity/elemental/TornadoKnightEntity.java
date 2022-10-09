@@ -1,5 +1,4 @@
 package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
-package io.github.seanlanepgh.knockselementalmagic.entity.elemental;
 
 
 import net.minecraft.core.particles.*;

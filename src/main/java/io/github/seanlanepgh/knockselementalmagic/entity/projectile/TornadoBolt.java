@@ -2,6 +2,7 @@ package io.github.seanlanepgh.knockselementalmagic.entity.projectile;
 
 
 import io.github.seanlanepgh.knockselementalmagic.core.*;
+import io.github.seanlanepgh.knockselementalmagic.entity.KnocksEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.*;
 import net.minecraft.nbt.*;
@@ -46,7 +47,11 @@ public class TornadoBolt extends AbstractArrow implements IAnimatable {
         super(KnocksEntityTypes.TORNADO_BOLT.get(), owner, world);
         this.shooter = owner;
     }
-
+    public TornadoBolt(Level world, KnocksEntity parentEntity, double d2, double d3, double d4, float damage) {
+        super(KnocksEntityTypes.QUAKE_BOLT.get(), parentEntity, world);
+        this.shooter = parentEntity;
+        this.projectiledamage = damage;
+    }
     public TornadoBolt(Level world, LivingEntity owner, double damage) {
         super(KnocksEntityTypes.TORNADO_BOLT.get(), owner, world);
         this.shooter = owner;
