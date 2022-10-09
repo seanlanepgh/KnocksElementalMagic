@@ -40,8 +40,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions;
-//import net.minecraftforge.client.event.;
-import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -148,11 +147,11 @@ public final class ClientModEvents {
 	@SuppressWarnings("resource")
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
-    public static void registerParticleFactories(ParticleFactoryRegisterEvent event) {
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
         ParticleEngine particleManager = Minecraft.getInstance().particleEngine;
-        
+
         particleManager.register(KnocksParticles.SNOWFLAKE.get(), SnowflakeParticle.Factory::new);
-    
+
         //KnocksEntityTypes.LOGGER.info("KnocksEntityTypes Elemental Wizardry: Particles Registered!");
     }
 	@SubscribeEvent

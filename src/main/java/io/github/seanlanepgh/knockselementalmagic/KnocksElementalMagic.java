@@ -60,7 +60,7 @@ public class KnocksElementalMagic
         KnocksParticles.PARTICLES.register(modEventBus);
         KnocksItems.ITEMS.register(modEventBus);
         KnocksEnchantments.ENCHANTMENTS.register(modEventBus);
-        KnocksEntityTypes.register(modEventBus);
+        KnocksEntityTypes.ENTITY_TYPES.register(modEventBus);
         GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
 

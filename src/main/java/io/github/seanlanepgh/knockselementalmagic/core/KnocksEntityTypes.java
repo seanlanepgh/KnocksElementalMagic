@@ -25,7 +25,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class KnocksEntityTypes {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITIES, KnocksElementalMagic.MODID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, KnocksElementalMagic.MODID);
 
     public static final RegistryObject<EntityType<BlizzEntity>> BLIZZ = ENTITY_TYPES.register("blizz",
             () -> EntityType.Builder.of(BlizzEntity::new, MobCategory.MONSTER).sized(1.4F, 0.9F)
