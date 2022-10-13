@@ -58,9 +58,11 @@ public class KnocksElementalMagic
        // BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         KnocksParticles.PARTICLES.register(modEventBus);
+        KnocksBlocks.BLOCKS.register(modEventBus);
         KnocksItems.ITEMS.register(modEventBus);
         KnocksEnchantments.ENCHANTMENTS.register(modEventBus);
         KnocksEntityTypes.ENTITY_TYPES.register(modEventBus);
+        KnocksVillagers.register(modEventBus);
         GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
 
@@ -68,6 +70,9 @@ public class KnocksElementalMagic
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            KnocksVillagers.registerPOIs();
+        });
         // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
