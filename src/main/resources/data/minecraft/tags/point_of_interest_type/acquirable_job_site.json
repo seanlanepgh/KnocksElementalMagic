@@ -1,5 +1,8 @@
 {
   "values": [
+      "knockselementalmagic:earth_altar_poi",
+      "knockselementalmagic:air_altar_poi",
+      "knockselementalmagic:ice_altar_poi",
       "knockselementalmagic:fire_altar_poi"
   ]
 }

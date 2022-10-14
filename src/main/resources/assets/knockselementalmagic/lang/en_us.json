@@ -1,4 +1,10 @@
 {
   "block.knockselementalmagic.fire_altar":"Fire Altar",
-  "entity.minecraft.villager.knockselementalmagic.fire_wizard": "Fire Wizard"
+  "block.knockselementalmagic.ice_altar":"Ice Altar",
+  "block.knockselementalmagic.air_altar":"Air Altar",
+  "block.knockselementalmagic.air_altar":"Earth Altar",
+  "entity.minecraft.villager.knockselementalmagic.fire_wizard": "Fire Wizard",
+  "entity.minecraft.villager.knockselementalmagic.ice_wizard": "Ice Wizard",
+  "entity.minecraft.villager.knockselementalmagic.air_wizard": "Air Wizard",
+  "entity.minecraft.villager.knockselementalmagic.earth_wizard": "Earth Wizard"
 }

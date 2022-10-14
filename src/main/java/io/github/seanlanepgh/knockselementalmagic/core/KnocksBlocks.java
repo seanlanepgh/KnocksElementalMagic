@@ -22,6 +22,13 @@ public class KnocksBlocks {
     public static final RegistryObject<Block> FIRE_ALTAR =  registerBlock("fire_altar",
     () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
 
+    public static final RegistryObject<Block> ICE_ALTAR =  registerBlock("ice_altar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> EARTH_ALTAR =  registerBlock("earth_altar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<Block> AIR_ALTAR =  registerBlock("air_altar",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn,tab);
