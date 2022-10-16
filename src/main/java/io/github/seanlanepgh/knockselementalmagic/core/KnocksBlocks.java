@@ -1,12 +1,14 @@
 package io.github.seanlanepgh.knockselementalmagic.core;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
+import io.github.seanlanepgh.knockselementalmagic.core.blocks.FireAltarBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,14 +22,22 @@ public class KnocksBlocks {
             KnocksElementalMagic.MODID);
 
     public static final RegistryObject<Block> FIRE_ALTAR =  registerBlock("fire_altar",
-    () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
+            () -> new FireAltarBlock(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().lightLevel((p_152692_) -> {
+                return 7;
+            }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
 
-    public static final RegistryObject<Block> ICE_ALTAR =  registerBlock("ice_altar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<Block> EARTH_ALTAR =  registerBlock("earth_altar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<Block> AIR_ALTAR =  registerBlock("air_altar",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE)), CreativeModeTab.TAB_MISC);
+//    public static final RegistryObject<Block> ICE_ALTAR =  registerBlock("ice_altar",
+//            () -> new ElementalAltar(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().lightLevel((p_152692_) -> {
+//                return 7;
+//            }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
+//    public static final RegistryObject<Block> EARTH_ALTAR =  registerBlock("earth_altar",
+//            () -> new ElementalAltar(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().lightLevel((p_152692_) -> {
+//                return 7;
+//            }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
+//    public static final RegistryObject<Block> AIR_ALTAR =  registerBlock("air_altar",
+//            () -> new ElementalAltar(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_RED).requiresCorrectToolForDrops().lightLevel((p_152692_) -> {
+//                return 7;
+//            }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

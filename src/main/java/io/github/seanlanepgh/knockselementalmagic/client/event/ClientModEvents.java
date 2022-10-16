@@ -10,6 +10,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.event;
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
 //import io.github.seanlanepgh.knockselementalmagic.client.model.projectile.QuakeBlastRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.armor.*;
+import io.github.seanlanepgh.knockselementalmagic.client.renderer.block.FireAltarRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.elemental.*;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.AirGolemRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.golem.EarthGolemRenderer;
@@ -21,6 +22,7 @@ import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.EarthSpi
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.FireSpikeRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.IceSpikeRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.wizard.CustomWizardRenderer;
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksBlockEntityTypes;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.client.particles.SnowflakeParticle;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
@@ -79,7 +81,7 @@ public final class ClientModEvents {
 	
 	@SubscribeEvent 
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-
+		event.registerBlockEntityRenderer(KnocksBlockEntityTypes.FIRE_ALTAR.get(), FireAltarRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BOLT.get(), BlizzBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLAZE_BOLT.get(), BlazeBoltRenderer::new);
 		event.registerEntityRenderer(KnocksEntityTypes.BLIZZ_BLAST.get(), BlizzBlastRenderer::new);
