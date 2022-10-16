@@ -29,7 +29,7 @@ public class EarthAltarBlockEntity extends BlockEntity implements Nameable {
     private Component name;
 
     public EarthAltarBlockEntity(BlockPos p_155501_, BlockState p_155502_) {
-        super(KnocksBlockEntityTypes.FIRE_ALTAR.get(), p_155501_, p_155502_);
+        super(KnocksBlockEntityTypes.EARTH_ALTAR.get(), p_155501_, p_155502_);
     }
 
     protected void saveAdditional(CompoundTag p_187500_) {
@@ -48,7 +48,7 @@ public class EarthAltarBlockEntity extends BlockEntity implements Nameable {
 
     }
 
-    public static void bookAnimationTick(Level p_155504_, BlockPos p_155505_, BlockState p_155506_, FireAltarBlockEntity p_155507_) {
+    public static void bookAnimationTick(Level p_155504_, BlockPos p_155505_, BlockState p_155506_, EarthAltarBlockEntity p_155507_) {
         p_155507_.oOpen = p_155507_.open;
         p_155507_.oRot = p_155507_.rot;
         Player player = p_155504_.getNearestPlayer((double)p_155505_.getX() + 0.5D, (double)p_155505_.getY() + 0.5D, (double)p_155505_.getZ() + 0.5D, 3.0D, false);

@@ -1,7 +1,7 @@
 package io.github.seanlanepgh.knockselementalmagic.core.blocks;
 
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksBlockEntityTypes;
-import io.github.seanlanepgh.knockselementalmagic.core.blocks.entity.FireAltarBlockEntity;
+import io.github.seanlanepgh.knockselementalmagic.core.blocks.entity.IceAltarBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -67,14 +67,14 @@ public class IceAltarBlock extends BaseEntityBlock {
     }
 
     public BlockEntity newBlockEntity(BlockPos p_153186_, BlockState p_153187_) {
-        return new FireAltarBlockEntity(p_153186_, p_153187_);
+        return new IceAltarBlockEntity(p_153186_, p_153187_);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return  level.isClientSide ? createTickerHelper(type, KnocksBlockEntityTypes.FIRE_ALTAR.get(), FireAltarBlockEntity::bookAnimationTick) : null;
-        //return p_153182_.isClientSide ? createTickerHelper(p_153184_, KnocksBlockEntityTypes.FIRE_ALTAR, FireAltarBlockEntity::bookAnimationTick) : null;
+        return  level.isClientSide ? createTickerHelper(type, KnocksBlockEntityTypes.ICE_ALTAR.get(), IceAltarBlockEntity::bookAnimationTick) : null;
+        //return p_153182_.isClientSide ? createTickerHelper(p_153184_, KnocksBlockEntityTypes.FIRE_ALTAR, IceAltarBlockEntity::bookAnimationTick) : null;
     }
 
     public InteractionResult use(BlockState p_52974_, Level p_52975_, BlockPos p_52976_, Player p_52977_, InteractionHand p_52978_, BlockHitResult p_52979_) {
@@ -89,7 +89,7 @@ public class IceAltarBlock extends BaseEntityBlock {
     @Nullable
     public MenuProvider getMenuProvider(BlockState p_52993_, Level p_52994_, BlockPos p_52995_) {
         BlockEntity blockentity = p_52994_.getBlockEntity(p_52995_);
-        if (blockentity instanceof FireAltarBlockEntity) {
+        if (blockentity instanceof IceAltarBlockEntity) {
             Component component = ((Nameable)blockentity).getDisplayName();
             return new SimpleMenuProvider((p_207906_, p_207907_, p_207908_) -> {
                 return new EnchantmentMenu(p_207906_, p_207907_, ContainerLevelAccess.create(p_52994_, p_52995_));
@@ -102,8 +102,8 @@ public class IceAltarBlock extends BaseEntityBlock {
     public void setPlacedBy(Level p_52963_, BlockPos p_52964_, BlockState p_52965_, LivingEntity p_52966_, ItemStack p_52967_) {
         if (p_52967_.hasCustomHoverName()) {
             BlockEntity blockentity = p_52963_.getBlockEntity(p_52964_);
-            if (blockentity instanceof FireAltarBlockEntity) {
-                ((FireAltarBlockEntity)blockentity).setCustomName(p_52967_.getHoverName());
+            if (blockentity instanceof IceAltarBlockEntity) {
+                ((IceAltarBlockEntity)blockentity).setCustomName(p_52967_.getHoverName());
             }
         }
 
