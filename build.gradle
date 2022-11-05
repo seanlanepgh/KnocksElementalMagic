@@ -1,8 +1,23 @@
-plugins {
-    id 'eclipse'
-    id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://repo.spongepowered.org/maven/' }
+        maven { url = 'https://plugins.gradle.org/m2/' }
+
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+    }
 }
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
 group = 'io.github.seanlanepgh.knockselementalmagic' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -132,7 +147,9 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.19-41.0.98'
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.23')
-
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    //clientAnnotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    //apiAnnotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
@@ -144,6 +161,16 @@ dependencies {
     // For more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+}
+
+mixin {
+    // MixinGradle
+    add sourceSets.main, "knockselementalmagic.refmap.json"
+    config "knockselementalmagic.mixins.json"
+
+    debug.verbose = true
+    debug.export = true
+    dumpTargetOnFailure = true
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
