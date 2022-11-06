@@ -1,3 +1,6 @@
 {
-  "parent" : "knockselementalmagic:block/fire_runestone"
+  "parent" : "block/cube_all",
+  "textures": {
+      "all": "knockselementalmagic:block/fire_runestone"
+  }
 }

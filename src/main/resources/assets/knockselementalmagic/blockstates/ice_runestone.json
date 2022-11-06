@@ -1,18 +1,5 @@
 {
   "variants": {
-    "":[
-      {
-        "model": "knockselemental:block/ice_runestone_1"
-      },
-      {
-        "model": "knockselemental:block/ice_runestone_2"
-      },
-      {
-        "model": "knockselemental:block/ice_runestone_3"
-      },
-      {
-        "model": "knockselemental:block/ice_runestone_4"
-      }
-    ]
+    "":{ "model": "knockselementalmagic:block/ice_runestone"}
   }
 }

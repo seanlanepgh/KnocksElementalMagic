@@ -1,18 +1,5 @@
 {
   "variants": {
-    "":[
-      {
-        "model": "knockselemental:block/earth_runestone_1"
-      },
-      {
-        "model": "knockselemental:block/earth_runestone_2"
-      },
-      {
-        "model": "knockselemental:block/earth_runestone_3"
-      },
-      {
-        "model": "knockselemental:block/earth_runestone_4"
-      }
-    ]
+    "":{ "model": "knockselementalmagic:block/earth_runestone"}
   }
 }

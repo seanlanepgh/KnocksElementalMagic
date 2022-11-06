@@ -1,18 +1,5 @@
 {
   "variants": {
-    "":[
-      {
-      "model": "knockselemental:block/air_runestone_1"
-    },
-    {
-      "model": "knockselemental:block/air_runestone_2"
-    },
-    {
-      "model": "knockselemental:block/air_runestone_3"
-    },
-    {
-      "model": "knockselemental:block/air_runestone_4"
-    }
-    ]
+    "":{ "model": "knockselementalmagic:block/air_runestone"}
   }
 }
