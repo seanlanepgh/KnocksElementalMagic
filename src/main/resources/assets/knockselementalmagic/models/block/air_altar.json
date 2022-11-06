@@ -1,7 +1,7 @@
 {   "parent": "block/block",
   "textures": {
-    "particle": "block/enchanting_table_bottom",
-    "bottom": "block/enchanting_table_bottom",
+    "particle": "knockselementalmagic:block/air_runestone",
+    "bottom": "knockselementalmagic:block/air_runestone",
     "top": "block/enchanting_table_top",
     "side": "block/enchanting_table_side"
   },

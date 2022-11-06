@@ -1,9 +1,9 @@
 {   "parent": "block/block",
   "textures": {
-    "particle": "block/enchanting_table_bottom",
-    "bottom": "block/enchanting_table_bottom",
-    "top": "block/enchanting_table_top",
-    "side": "block/enchanting_table_side"
+    "particle": "knockselementalmagic:block/earth_runestone",
+    "bottom": "knockselementalmagic:block/earth_runestone",
+    "top": "knockselementalmagic:block/earth_altar_top",
+    "side": "knockselementalmagic:block/earth_altar_side"
   },
   "elements": [
     {   "from": [ 0, 0, 0 ],
