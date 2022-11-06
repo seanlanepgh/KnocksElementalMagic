@@ -1,6 +1,7 @@
 {
-  "parent" : "block/cube_all",
+  "parent": "block/cube_column",
   "textures": {
-    "all": "knockselementalmagic:block/chiseled_air_runestone"
+    "end": "knockselementalmagic:block/air_runestone",
+    "side": "knockselementalmagic:block/chiseled_air_runestone"
   }
 }
