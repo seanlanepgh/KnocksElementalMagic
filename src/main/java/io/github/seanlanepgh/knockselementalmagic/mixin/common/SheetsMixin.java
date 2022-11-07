@@ -15,5 +15,8 @@ public class SheetsMixin {
     @Inject(at = @At("HEAD"), method = "Lnet/minecraft/client/renderer/Sheets;getAllMaterials(Ljava/util/function/Consumer;)V")
     private static void knockselementalmagic$getAllMaterials(Consumer<Material> acceptor, CallbackInfo callback) {
         acceptor.accept(KnocksMaterial.FIRE_BOOK_LOCATION);
+        acceptor.accept(KnocksMaterial.ICE_BOOK_LOCATION);
+        acceptor.accept(KnocksMaterial.AIR_BOOK_LOCATION);
+        acceptor.accept(KnocksMaterial.EARTH_BOOK_LOCATION);
     }
 }

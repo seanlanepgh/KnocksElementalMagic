@@ -2,8 +2,8 @@
     "textures": {
         "particle": "knockselementalmagic:block/ice_runestone",
         "bottom": "knockselementalmagic:block/ice_runestone",
-        "top": "block/enchanting_table_top",
-        "side": "block/enchanting_table_side"
+        "top": "knockselementalmagic:block/ice_altar_top",
+        "side": "knockselementalmagic:block/ice_altar_side"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

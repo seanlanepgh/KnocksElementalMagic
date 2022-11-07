@@ -3,6 +3,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.renderer.block;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksMaterial;
 import io.github.seanlanepgh.knockselementalmagic.core.blocks.entity.IceAltarBlockEntity;
 import net.minecraft.client.model.BookModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -48,7 +49,7 @@ public class IceAltarRenderer implements BlockEntityRenderer<IceAltarBlockEntity
       float f5 = Mth.frac(f3 + 0.75F) * 1.6F - 0.3F;
       float f6 = Mth.lerp(p_112419_, p_112418_.oOpen, p_112418_.open);
       this.bookModel.setupAnim(f, Mth.clamp(f4, 0.0F, 1.0F), Mth.clamp(f5, 0.0F, 1.0F), f6);
-      VertexConsumer vertexconsumer = BOOK_LOCATION.buffer(p_112421_, RenderType::entitySolid);
+      VertexConsumer vertexconsumer = KnocksMaterial.ICE_BOOK_LOCATION.buffer(p_112421_, RenderType::entitySolid);
       this.bookModel.render(p_112420_, vertexconsumer, p_112422_, p_112423_, 1.0F, 1.0F, 1.0F, 1.0F);
       p_112420_.popPose();
    }

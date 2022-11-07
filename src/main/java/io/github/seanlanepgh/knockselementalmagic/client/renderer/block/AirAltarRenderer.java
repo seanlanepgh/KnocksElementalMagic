@@ -3,6 +3,7 @@ package io.github.seanlanepgh.knockselementalmagic.client.renderer.block;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksMaterial;
 import io.github.seanlanepgh.knockselementalmagic.core.blocks.entity.AirAltarBlockEntity;
 import net.minecraft.client.model.BookModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -10,16 +11,12 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.texture.TextureAtlas;
-import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class AirAltarRenderer implements BlockEntityRenderer<AirAltarBlockEntity> {
-   public static final Material BOOK_LOCATION = new Material(TextureAtlas.LOCATION_BLOCKS, new ResourceLocation("entity/enchanting_table_book"));
    private final BookModel bookModel;
 
    public AirAltarRenderer(BlockEntityRendererProvider.Context p_173619_) {
@@ -48,7 +45,7 @@ public class AirAltarRenderer implements BlockEntityRenderer<AirAltarBlockEntity
       float f5 = Mth.frac(f3 + 0.75F) * 1.6F - 0.3F;
       float f6 = Mth.lerp(p_112419_, p_112418_.oOpen, p_112418_.open);
       this.bookModel.setupAnim(f, Mth.clamp(f4, 0.0F, 1.0F), Mth.clamp(f5, 0.0F, 1.0F), f6);
-      VertexConsumer vertexconsumer = BOOK_LOCATION.buffer(p_112421_, RenderType::entitySolid);
+      VertexConsumer vertexconsumer = KnocksMaterial.AIR_BOOK_LOCATION.buffer(p_112421_, RenderType::entitySolid);
       this.bookModel.render(p_112420_, vertexconsumer, p_112422_, p_112423_, 1.0F, 1.0F, 1.0F, 1.0F);
       p_112420_.popPose();
    }
