@@ -8,10 +8,7 @@ import io.github.seanlanepgh.knockselementalmagic.core.blocks.IceAltarBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.AmethystBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -47,21 +44,21 @@ public class KnocksBlocks {
                 return 7;
             }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> FIRE_CRYSTAL_ORE = registerBlock("fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_FIRE_CRYSTAL_ORE =registerBlock("deepslate_fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.FIRE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_FIRE_CRYSTAL_ORE = registerBlock("deepslate_fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.FIRE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> ICE_CRYSTAL_ORE = registerBlock("ice_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_ICE_CRYSTAL_ORE =registerBlock("deepslate_ice_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.ICE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_ICE_CRYSTAL_ORE = registerBlock("deepslate_ice_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.ICE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<DropExperienceBlock> AIR_CRYSTAL_ORE = registerBlock("air_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_AIR_CRYSTAL_ORE =registerBlock("deepslate_air_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.AIR_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<DropExperienceBlock> DEEPSLATE_AIR_CRYSTAL_ORE = registerBlock("deepslate_air_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.AIR_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
 
     public static final RegistryObject<DropExperienceBlock> EARTH_CRYSTAL_ORE = registerBlock("earth_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> DEEPSLATE_EARTH_CRYSTAL_ORE =registerBlock("deepslate_earth_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.EARTH_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<AmethystBlock> CRYSTAL_BLOCK = registerBlock("crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+    //public static final RegistryObject<AmethystBlock> CRYSTAL_BLOCK = registerBlock("crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> FIRE_CRYSTAL_BLOCK = registerBlock("fire_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> ICE_CRYSTAL_BLOCK = registerBlock("ice_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> AIR_CRYSTAL_BLOCK = registerBlock("air_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> EARTH_CRYSTAL_BLOCK = registerBlock("earth_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
-    public static final RegistryObject<AmethystBlock> REFINED_CRYSTAL_BLOCK = registerBlock("refined_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+   // public static final RegistryObject<AmethystBlock> REFINED_CRYSTAL_BLOCK = registerBlock("refined_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> REFINED_FIRE_CRYSTAL_BLOCK = registerBlock("refined_fire_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> REFINED_ICE_CRYSTAL_BLOCK = registerBlock("refined_ice_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystBlock> REFINED_AIR_CRYSTAL_BLOCK = registerBlock("refined_air_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.of(Material.AMETHYST, MaterialColor.COLOR_PURPLE).strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
@@ -83,6 +80,11 @@ public class KnocksBlocks {
     public static final RegistryObject<Block> CHISELED_FIRE_RUNESTONE_BRICKS = registerBlock("chiseled_fire_runestone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<Block> CHISELED_AIR_RUNESTONE_BRICKS = registerBlock("chiseled_air_runestone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<Block> CHISELED_EARTH_RUNESTONE_BRICKS = registerBlock("chiseled_earth_runestone", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DEEPSLATE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<AmethystClusterBlock> AIR_CRYSTAL_CLUSTER = registerBlock("air_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> ICE_CRYSTAL_CLUSTER = registerBlock("ice_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> EARTH_CRYSTAL_CLUSTER = registerBlock("earth_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> FIRE_CRYSTAL_CLUSTER = registerBlock("fire_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn,tab);

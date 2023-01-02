@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knockselementalmagic:block/ice_crystal_cluster"
+    "layer0": "knockselementalmagic:block/air_crystal_cluster"
   },
   "display": {
     "head": {

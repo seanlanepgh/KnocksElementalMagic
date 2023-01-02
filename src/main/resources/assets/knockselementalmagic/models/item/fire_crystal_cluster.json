@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "knockselementalmagic:blocks/fire_crystal_cluster"
+    "layer0": "knockselementalmagic:block/fire_crystal_cluster"
   },
   "display": {
     "head": {

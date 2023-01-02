@@ -41,8 +41,6 @@ public class KnocksItems {
         public static final RegistryObject<Item> NATURE_CRYSTAL = ITEMS.register("nature_crystal", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> SOUL_CRYSTAL = ITEMS.register("soul_crystal", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> VOID_CRYSTAL = ITEMS.register("void_crystal", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
-
-        public static final RegistryObject<Item> MAGIC_SILK = ITEMS.register("magic_silk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> FIRE_SILK = ITEMS.register("fire_silk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> ICE_SILK = ITEMS.register("ice_silk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));
         public static final RegistryObject<Item> EARTH_SILK = ITEMS.register("earth_silk", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC).rarity(Rarity.COMMON)));

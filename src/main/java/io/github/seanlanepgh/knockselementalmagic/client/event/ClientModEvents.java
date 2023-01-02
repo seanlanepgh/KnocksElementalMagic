@@ -26,6 +26,7 @@ import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.FireSpik
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.spell.IceSpikeRenderer;
 import io.github.seanlanepgh.knockselementalmagic.client.renderer.wizard.CustomWizardRenderer;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksBlockEntityTypes;
+import io.github.seanlanepgh.knockselementalmagic.core.KnocksBlocks;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksEntityTypes;
 import io.github.seanlanepgh.knockselementalmagic.core.KnocksParticles;
 import io.github.seanlanepgh.knockselementalmagic.core.items.armor.*;
@@ -40,6 +41,8 @@ import io.github.seanlanepgh.knockselementalmagic.entity.wizard.FireWizardEntity
 import io.github.seanlanepgh.knockselementalmagic.entity.wizard.IceWizardEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleEngine;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -58,6 +61,9 @@ public final class ClientModEvents {
 	}
 	@SubscribeEvent 
 	public static void clientSetup(RegisterLayerDefinitions event) {
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.FIRE_CRYSTAL_CLUSTER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.ICE_CRYSTAL_CLUSTER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.EARTH_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 	}
 
 	@SubscribeEvent
