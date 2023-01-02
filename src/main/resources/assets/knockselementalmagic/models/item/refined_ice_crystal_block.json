@@ -1,0 +1,6 @@
+{
+  "parent" : "block/cube_all",
+  "textures": {
+    "all": "knockselementalmagic:block/refined_ice_crystal_block"
+  }
+}
