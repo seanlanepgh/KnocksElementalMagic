@@ -64,6 +64,7 @@ public final class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.FIRE_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.ICE_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.EARTH_CRYSTAL_CLUSTER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.AIR_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 	}
 
 	@SubscribeEvent
