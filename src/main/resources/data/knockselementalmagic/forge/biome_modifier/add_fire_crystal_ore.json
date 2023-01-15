@@ -1,0 +1,22 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:sunflower_plains",
+    "minecraft:desert",
+    "minecraft:savanna",
+    "minecraft:savanna_plateau",
+    "minecraft:windswept_savanna",
+    "minecraft:jungle",
+    "minecraft:bamboo_jungle",
+    "minecraft:beach",
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean",
+    "minecraft:deep_lukewarm_ocean",
+    "minecraft:badlands",
+    "minecraft:eroded_badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:deep_dark"
+  ],
+  "features": "knockselementalmagic:fire_crystal_ore_placed",
+  "step": "underground_ores"
+}

@@ -2,6 +2,8 @@ package io.github.seanlanepgh.knockselementalmagic;
 
 import com.mojang.logging.LogUtils;
 import io.github.seanlanepgh.knockselementalmagic.core.*;
+import io.github.seanlanepgh.knockselementalmagic.feature.KnocksConfiguredFeatures;
+import io.github.seanlanepgh.knockselementalmagic.feature.KnocksPlacedFeatures;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -53,6 +55,8 @@ public class KnocksElementalMagic
         KnocksEnchantments.ENCHANTMENTS.register(modEventBus);
         KnocksEntityTypes.ENTITY_TYPES.register(modEventBus);
         KnocksVillagers.register(modEventBus);
+        KnocksConfiguredFeatures.register(modEventBus);
+        KnocksPlacedFeatures.register(modEventBus);
         GeckoLib.initialize();
         // Register ourselves for server and other game events we are interested in
 
