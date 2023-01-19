@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud"
+    },
+    "facing=west": {
+      "model": "knockselementalmagic:block/small_earth_crystal_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
