@@ -1,10 +1,7 @@
 package io.github.seanlanepgh.knockselementalmagic.core;
 
 import io.github.seanlanepgh.knockselementalmagic.KnocksElementalMagic;
-import io.github.seanlanepgh.knockselementalmagic.core.blocks.AirAltarBlock;
-import io.github.seanlanepgh.knockselementalmagic.core.blocks.EarthAltarBlock;
-import io.github.seanlanepgh.knockselementalmagic.core.blocks.FireAltarBlock;
-import io.github.seanlanepgh.knockselementalmagic.core.blocks.IceAltarBlock;
+import io.github.seanlanepgh.knockselementalmagic.core.blocks.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,6 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
+import static net.minecraft.world.level.block.Blocks.AMETHYST_CLUSTER;
 import static net.minecraft.world.level.block.Blocks.IRON_ORE;
 
 public class KnocksBlocks {
@@ -85,6 +83,52 @@ public class KnocksBlocks {
     public static final RegistryObject<AmethystClusterBlock> ICE_CRYSTAL_CLUSTER = registerBlock("ice_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystClusterBlock> EARTH_CRYSTAL_CLUSTER = registerBlock("earth_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<AmethystClusterBlock> FIRE_CRYSTAL_CLUSTER = registerBlock("fire_crystal_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of(Material.AMETHYST).noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F)),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<BuddingAirCrystalBlock> BUDDING_AIR_CRYSTAL = registerBlock("budding_air_crystal", () -> new BuddingAirCrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<BuddingEarthCrystalBlock> BUDDING_EARTH_CRYSTAL = registerBlock("budding_earth_crystal", () -> new BuddingEarthCrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<BuddingIceCrystalBlock> BUDDING_ICE_CRYSTAL = registerBlock("budding_ice_crystal", () -> new BuddingIceCrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<BuddingFireCrystalBlock> BUDDING_FIRE_CRYSTAL = registerBlock("budding_fire_crystal", () -> new BuddingFireCrystalBlock(BlockBehaviour.Properties.of(Material.AMETHYST).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops()),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<AmethystClusterBlock> LARGE_AIR_CRYSTAL_BUD = registerBlock("large_air_crystal_bud",() -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> {
+        return 4;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> MEDIUM_AIR_CRYSTAL_BUD = registerBlock("medium_air_crystal_bud",() -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152617_) -> {
+        return 2;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> SMALL_AIR_CRYSTAL_BUD = registerBlock("small_air_crystal_bud",() -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_187409_) -> {
+        return 1;
+    })),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<AmethystClusterBlock> LARGE_FIRE_CRYSTAL_BUD = registerBlock("large_fire_crystal_bud",() -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> {
+        return 4;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> MEDIUM_FIRE_CRYSTAL_BUD = registerBlock("medium_fire_crystal_bud",() -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152617_) -> {
+        return 2;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> SMALL_FIRE_CRYSTAL_BUD = registerBlock("small_fire_crystal_bud",() -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_187409_) -> {
+        return 1;
+    })),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<AmethystClusterBlock> LARGE_ICE_CRYSTAL_BUD = registerBlock("large_ice_crystal_bud",() -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> {
+        return 4;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> MEDIUM_ICE_CRYSTAL_BUD = registerBlock("medium_ice_crystal_bud",() -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152617_) -> {
+        return 2;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> SMALL_ICE_CRYSTAL_BUD = registerBlock("small_ice_crystal_bud",() -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_187409_) -> {
+        return 1;
+    })),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<AmethystClusterBlock> LARGE_EARTH_CRYSTAL_BUD = registerBlock("large_earth_crystal_bud",() -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.MEDIUM_AMETHYST_BUD).lightLevel((p_152629_) -> {
+        return 4;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> MEDIUM_EARTH_CRYSTAL_BUD = registerBlock("medium_earth_crystal_bud",() -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.LARGE_AMETHYST_BUD).lightLevel((p_152617_) -> {
+        return 2;
+    })),CreativeModeTab.TAB_MISC);
+    public static final RegistryObject<AmethystClusterBlock> SMALL_EARTH_CRYSTAL_BUD = registerBlock("small_earth_crystal_bud",() -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER).sound(SoundType.SMALL_AMETHYST_BUD).lightLevel((p_187409_) -> {
+        return 1;
+    })),CreativeModeTab.TAB_MISC);
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn,tab);

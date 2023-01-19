@@ -65,6 +65,18 @@ public final class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.ICE_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.EARTH_CRYSTAL_CLUSTER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.AIR_CRYSTAL_CLUSTER.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.LARGE_FIRE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.LARGE_ICE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.LARGE_EARTH_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.LARGE_AIR_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.MEDIUM_FIRE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.MEDIUM_ICE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.MEDIUM_EARTH_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.MEDIUM_AIR_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.SMALL_FIRE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.SMALL_ICE_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.SMALL_EARTH_CRYSTAL_BUD.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(KnocksBlocks.SMALL_AIR_CRYSTAL_BUD.get(), RenderType.cutout());
 	}
 
 	@SubscribeEvent

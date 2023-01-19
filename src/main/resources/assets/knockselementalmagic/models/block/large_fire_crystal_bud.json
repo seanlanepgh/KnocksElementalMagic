@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "knockselementalmagic:block/large_fire_crystal_bud"
+  }
+}

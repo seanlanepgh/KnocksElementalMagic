@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "knockselementalmagic:block/small_earth_crystal_bud"
+  }
+}

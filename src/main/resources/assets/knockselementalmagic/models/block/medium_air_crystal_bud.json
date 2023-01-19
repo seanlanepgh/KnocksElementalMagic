@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "knockselementalmagic:block/medium_air_crystal_bud"
+  }
+}
