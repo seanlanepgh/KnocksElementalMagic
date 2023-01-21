@@ -19,6 +19,10 @@ public class KnocksPlacedFeatures {
             () -> new PlacedFeature(KnocksConfiguredFeatures.OVERWORLD_FIRE_CRYSTAL_ORE.getHolder().get(),
                     commonOrePlacement(9, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(256)))));
+
+    public static final RegistryObject<PlacedFeature> NETHER_FIRE_CRYSTAL_ORE_PLACED = PLACED_FEATURES.register("nether_fire_crystal_ore_placed",
+            () -> new PlacedFeature(KnocksConfiguredFeatures.NETHER_FIRE_CRYSTAL_ORE.getHolder().get(), commonOrePlacement(9, // VeinsPerChunk
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(256)))));
     public static final RegistryObject<PlacedFeature> ICE_CRYSTAL_ORE_PLACED = PLACED_FEATURES.register("ice_crystal_ore_placed",
             () -> new PlacedFeature(KnocksConfiguredFeatures.OVERWORLD_ICE_CRYSTAL_ORE.getHolder().get(),
                     commonOrePlacement(12, // VeinsPerChunk
@@ -31,6 +35,13 @@ public class KnocksPlacedFeatures {
             () -> new PlacedFeature(KnocksConfiguredFeatures.OVERWORLD_AIR_CRYSTAL_ORE.getHolder().get(),
                     commonOrePlacement(12, // VeinsPerChunk
                             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(256)))));
+
+    public static final RegistryObject<PlacedFeature> NETHER_FIRE_CRYSTAL_GEODE_PLACED = PLACED_FEATURES.register("nether_fire_crystal_geode_placed",
+            () -> new PlacedFeature(KnocksConfiguredFeatures.NETHER_FIRE_CRYSTAL_GEODE.getHolder().get(), List.of(
+                    RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
+                    HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
+                    BiomeFilter.biome())));
+
 
     public static final RegistryObject<PlacedFeature> FIRE_CRYSTAL_GEODE_PLACED = PLACED_FEATURES.register("fire_crystal_geode_placed",
             () -> new PlacedFeature(KnocksConfiguredFeatures.FIRE_CRYSTAL_GEODE.getHolder().get(), List.of(
@@ -53,6 +64,8 @@ public class KnocksPlacedFeatures {
                     RarityFilter.onAverageOnceEvery(50), InSquarePlacement.spread(),
                     HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(6), VerticalAnchor.absolute(50)),
                     BiomeFilter.biome())));
+
+
     public static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
         return List.of(p_195347_, InSquarePlacement.spread(), p_195348_, BiomeFilter.biome());
     }
