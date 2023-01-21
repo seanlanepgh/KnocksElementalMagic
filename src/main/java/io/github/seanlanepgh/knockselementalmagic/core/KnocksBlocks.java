@@ -16,8 +16,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static net.minecraft.world.level.block.Blocks.AMETHYST_CLUSTER;
-import static net.minecraft.world.level.block.Blocks.IRON_ORE;
+import static net.minecraft.world.level.block.Blocks.*;
 
 public class KnocksBlocks {
 
@@ -42,6 +41,8 @@ public class KnocksBlocks {
                 return 7;
             }).strength(5.0F, 1200.0F)), CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> FIRE_CRYSTAL_ORE = registerBlock("fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
+
+    public static final RegistryObject<DropExperienceBlock> NETHER_FIRE_CRYSTAL_ORE = registerBlock("nether_fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> DEEPSLATE_FIRE_CRYSTAL_ORE = registerBlock("deepslate_fire_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.FIRE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> ICE_CRYSTAL_ORE = registerBlock("ice_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(IRON_ORE)),CreativeModeTab.TAB_MISC);
     public static final RegistryObject<DropExperienceBlock> DEEPSLATE_ICE_CRYSTAL_ORE = registerBlock("deepslate_ice_crystal_ore",() -> new DropExperienceBlock(BlockBehaviour.Properties.copy(KnocksBlocks.ICE_CRYSTAL_ORE.get()).color(MaterialColor.DEEPSLATE).strength(4.5F, 3.0F).sound(SoundType.DEEPSLATE)),CreativeModeTab.TAB_MISC);
