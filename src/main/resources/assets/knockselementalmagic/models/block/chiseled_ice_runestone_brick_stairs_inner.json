@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "knockselementalmagic:block/chiseled_ice_runestone_bricks",
+    "top": "knockselementalmagic:block/chiseled_ice_runestone_bricks",
+    "side": "knockselementalmagic:block/chiseled_ice_runestone_bricks"
+  }
+}
