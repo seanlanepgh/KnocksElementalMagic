@@ -1,12 +1,12 @@
 {
 "type": "minecraft:jigsaw",
 
-"start_pool": "knockselementalmagic:air_altar_1/start_pool",
+"start_pool": "knockselementalmagic:air_altar/start_pool",
 
 "size": 2,
 "max_distance_from_center": 80,
 
-"biomes": "#knockselementalmagic:has_structure/air_altar_1",
+"biomes": "#knockselementalmagic:has_structure/air_altar",
 
 // The generation step for when to generate the structure. there are 10 stages you can pick from!
 // This surface structure stage places the structure before plants and ores are generated

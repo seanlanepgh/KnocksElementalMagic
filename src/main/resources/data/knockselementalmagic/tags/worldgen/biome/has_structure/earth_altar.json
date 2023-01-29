@@ -5,9 +5,6 @@
   "values": [
     "minecraft:swamp",
     "minecraft:mangrove_swamp",
-    "minecraft:taiga",
-    "minecraft:badlands",
-    "minecraft:eroded_badlands",
-    "minecraft:wooded_badlands"
+    "minecraft:taiga"
   ]
 }
